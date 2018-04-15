@@ -1,0 +1,155 @@
+#wpadminbar #wp-admin-bar-shm-switch .ab-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: transparent;
+}
+
+#wpadminbar #wp-admin-bar-shm-switch .ab-item .dashicons {
+    font-family: dashicons, serif;
+}
+
+#wp-admin-bar-shm-switch .switch__container {
+    width: 50px;
+}
+
+#wp-admin-bar-shm-switch .switch {
+    visibility: hidden;
+    position: absolute;
+    margin-left: -9999px;
+}
+
+#wp-admin-bar-shm-switch .switch + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+
+#wp-admin-bar-shm-switch .switch + label {
+    padding: 2px;
+    width: 45px;
+    height: 20px;
+    border-radius: 60px;
+    transition: background 0.4s;
+}
+
+#wp-admin-bar-shm-switch .switch + label:before,
+#wp-admin-bar-shm-switch .switch + label:after {
+    display: block;
+    position: absolute;
+    content: "";
+}
+
+#wp-admin-bar-shm-switch .switch + label:before {
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    right: 2px;
+    background-color: #676e76;
+    border-radius: 60px;
+    transition: background 0.4s;
+}
+
+#wp-admin-bar-shm-switch .switch + label:after {
+    top: 4px;
+    left: 4px;
+    bottom: 4px;
+    width: 16px;
+    background-color: #dddddd;
+    border-radius: 50%;
+    transition: margin 0.4s, background 0.4s;
+}
+
+#wp-admin-bar-shm-switch .switch:checked + label:after {
+    margin-left: 25px;
+    background-color: #00b9eb;
+}
+
+#wp-admin-bar-shm-switch .switch__content {
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 150px;
+    padding: 15px 10px;
+    background: #23282d;
+    text-align: right;
+}
+
+#wp-admin-bar-shm-switch .switch__content p {
+    display: block;
+    width: 100%;
+    color: #eee;
+    line-height: 1.2em;
+    vertical-align: middle;
+}
+
+#wp-admin-bar-shm-switch .switch__content p:hover {
+    color: #00b9eb;
+    cursor: pointer;
+}
+
+#wp-admin-bar-shm-switch .switch__content p .dashicons {
+    width: 0;
+    overflow: hidden;
+    vertical-align: middle;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+#wp-admin-bar-shm-switch .switch__content p:hover .dashicons {
+    width: 15px;
+    color: #ff2401;
+}
+
+/**
+ * Icon for Sidebar Menu Item
+ */
+
+.shm-enable #adminmenu .menu-top .shm-remove-li {
+    display: inline-block;
+}
+
+#adminmenu .menu-top .shm-remove-li {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: -30px;
+    padding: 5px;
+    color: #ff2401;
+    z-index: 9999;
+    background-color: #191e23;
+    -webkit-transition: left 0.5s cubic-bezier(0.8, -0.2, 0.55, 1.3) 1s;
+    -moz-transition: left 0.5s cubic-bezier(0.8, -0.2, 0.55, 1.3) 1s;
+    -ms-transition: left 0.5s cubic-bezier(0.8, -0.2, 0.55, 1.3) 1s;
+    -o-transition: left 0.5s cubic-bezier(0.8, -0.2, 0.55, 1.3) 1s;
+    transition-property: left, transform;
+    transition-duration: 0.3s, 0.5s;
+    transition-timing-function: cubic-bezier(0.8, -0.2, 0.55, 1.3), linear;
+    transition-delay: 1s, 0s;
+}
+
+#adminmenu .menu-top:hover .shm-remove-li {
+    left: 0;
+}
+
+#adminmenu .menu-top .shm-remove-li:hover {
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.ui-effects-transfer {
+    border: 2px dotted #00b9eb;
+    background: #00b9eb;
+    z-index: 9999;
+}
