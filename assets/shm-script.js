@@ -63,7 +63,7 @@
 
         save && save_option('save_status', {'status': status * 1});
     }
-    
+
     /**
      * Сохраняет данные.
      *

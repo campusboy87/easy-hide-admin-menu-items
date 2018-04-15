@@ -42,7 +42,7 @@ class Simple_Hidden_Menu {
 	 *
 	 * @return void
 	 */
-	function init() {
+	public function init() {
 		$this->url = plugin_dir_url( __FILE__ );
 		$this->set_properties();
 		$this->register_ajax_hooks();
@@ -70,7 +70,7 @@ class Simple_Hidden_Menu {
 	 *
 	 * @return void
 	 */
-	function save_options() {
+	public function save_options() {
 		update_option( 'simple_hidden_menu', $this->options, false );
 	}
 
@@ -81,7 +81,7 @@ class Simple_Hidden_Menu {
 	 *
 	 * @return  string $classes
 	 */
-	function add_body_class( $classes ) {
+	public function add_body_class( $classes ) {
 		return $this->status || empty( $this->items ) ? $classes . 'shm-enable' : $classes;
 	}
 
@@ -90,7 +90,7 @@ class Simple_Hidden_Menu {
 	 *
 	 * @param WP_Admin_Bar $wp_admin_bar
 	 */
-	function add_switch_to_menu( $wp_admin_bar ) {
+	public function add_switch_to_menu( $wp_admin_bar ) {
 		$wp_admin_bar->add_menu( [
 			'id'     => 'shm-switch',
 			'parent' => 'top-secondary',
@@ -103,7 +103,7 @@ class Simple_Hidden_Menu {
 	 *
 	 * @return string
 	 */
-	function get_switch_html() {
+	public function get_switch_html() {
 		ob_start();
 		?>
 
@@ -135,7 +135,7 @@ class Simple_Hidden_Menu {
 	 *
 	 * @return void
 	 */
-	function enqueue_assets() {
+	public function enqueue_assets() {
 		wp_enqueue_style( 'shm-style', $this->url . 'assets/shm-style.css' );
 		$this->inline_style( 'shm-style' );
 
@@ -159,7 +159,7 @@ class Simple_Hidden_Menu {
 	 *
 	 * @return void
 	 */
-	function inline_style( $handle ) {
+	public function inline_style( $handle ) {
 		if ( $this->items ) {
 			$css = '';
 			foreach ( $this->items as $id => $text ) {
@@ -177,7 +177,7 @@ class Simple_Hidden_Menu {
 	 *
 	 * @return array
 	 */
-	function get_ajax_options( $key ) {
+	public function get_ajax_options( $key ) {
 		$data = map_deep( $_POST, function ( $val ) {
 			return trim( sanitize_text_field( $val ) );
 		} );
@@ -189,7 +189,7 @@ class Simple_Hidden_Menu {
 	 * Регистрирует AJAX обработчики.
 	 * @return void
 	 */
-	function register_ajax_hooks() {
+	public function register_ajax_hooks() {
 		if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
 			add_action( 'wp_ajax_shm_save_status', [ $this, 'ajax_save_status' ] );
 			add_action( 'wp_ajax_shm_add_item', [ $this, 'ajax_add_item' ] );
@@ -202,7 +202,7 @@ class Simple_Hidden_Menu {
 	 *
 	 * @return void
 	 */
-	function ajax_save_status() {
+	public function ajax_save_status() {
 		$this->check_ajax_referer();
 
 		$status = $this->get_ajax_options( 'status' );
@@ -220,7 +220,7 @@ class Simple_Hidden_Menu {
 	 *
 	 * @return void
 	 */
-	function ajax_add_item() {
+	public function ajax_add_item() {
 		$this->check_ajax_referer();
 
 		$data = $this->get_ajax_options( 'item' );
@@ -239,7 +239,7 @@ class Simple_Hidden_Menu {
 	 *
 	 * @return void
 	 */
-	function ajax_remove_item() {
+	public function ajax_remove_item() {
 		$this->check_ajax_referer();
 
 		$id = $this->get_ajax_options( 'id' );
@@ -261,7 +261,7 @@ class Simple_Hidden_Menu {
 	 *
 	 * @return void
 	 */
-	function check_ajax_referer() {
+	public function check_ajax_referer() {
 		check_ajax_referer( 'shm-nonce' );
 	}
 }
