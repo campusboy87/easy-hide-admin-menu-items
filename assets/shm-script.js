@@ -45,14 +45,25 @@
      * @param {boolean} save
      */
     function showRemoveIcon(status, save) {
-        if (status)
-            $('body').addClass('shm-enable');
-        else
-            $('body').removeClass('shm-enable');
+
+        $('.switch__content p', $barShm).each(function () {
+            var id = $(this).data('id');
+            var $el = $('[id=' + id + ']', $sidebar);
+
+            if (status) {
+                $el.hide(500, function () {
+                    $('body').addClass('shm-enable');
+                })
+            } else {
+                $el.show(500, function () {
+                    $('body').removeClass('shm-enable');
+                })
+            }
+        });
 
         save && save_option('save_status', {'status': status * 1});
     }
-
+    
     /**
      * Сохраняет данные.
      *
@@ -119,11 +130,11 @@
             $btnSwitch.prop('checked', false);
             $('.switch__content', $barShm).append(noItems);
         } else {
-            $btnSwitch.prop('checked', true);
             $('.no-items', $barShm).remove();
         }
 
         if (action === 'plus') {
+            $btnSwitch.prop('checked', true);
             animateSwitchContent();
         }
     }
