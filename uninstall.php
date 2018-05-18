@@ -4,4 +4,4 @@
  */
 defined( 'WP_UNINSTALL_PLUGIN' ) || exit;
 
-delete_option( 'simple_hidden_menu' );
+delete_option( 'hide_admin_menu_items' );

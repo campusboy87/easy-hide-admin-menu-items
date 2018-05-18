@@ -4,10 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-/**
- * Class Simple_Hidden_Menu
- */
-class Simple_Hidden_Menu {
+class Hide_Admin_Menu_Items {
 
 	/**
 	 * Ссылка на папку с плагином с закрывающим слешем на конце.
@@ -58,7 +55,7 @@ class Simple_Hidden_Menu {
 	 * @return void
 	 */
 	public function set_properties() {
-		$options = get_option( 'simple_hidden_menu' );
+		$options = get_option( 'hide_admin_menu_items' );
 
 		$this->options = $options && is_array( $options ) ? $options : [];
 		$this->items   = ! empty( $this->options['items'] ) ? $this->options['items'] : [];
@@ -71,7 +68,7 @@ class Simple_Hidden_Menu {
 	 * @return void
 	 */
 	public function save_options() {
-		update_option( 'simple_hidden_menu', $this->options, false );
+		update_option( 'hide_admin_menu_items', $this->options, false );
 	}
 
 	/**
@@ -82,7 +79,7 @@ class Simple_Hidden_Menu {
 	 * @return  string $classes
 	 */
 	public function add_body_class( $classes ) {
-		return $this->status || empty( $this->items ) ? $classes . 'shm-enable' : $classes;
+		return $this->status || empty( $this->items ) ? $classes . 'hami-enable' : $classes;
 	}
 
 	/**
@@ -92,7 +89,7 @@ class Simple_Hidden_Menu {
 	 */
 	public function add_switch_to_menu( $wp_admin_bar ) {
 		$wp_admin_bar->add_menu( [
-			'id'     => 'shm-switch',
+			'id'     => 'hami-switch',
 			'parent' => 'top-secondary',
 			'title'  => $this->get_switch_html(),
 		] );
@@ -116,7 +113,7 @@ class Simple_Hidden_Menu {
 					foreach ( $this->items as $id => $text ) {
 						printf( '<p data-id="%s">
                                     <span class="text">%s</span>
-                                    <span class="dashicons dashicons-no shm-restore-li" title="Убрать из списка"></span>
+                                    <span class="dashicons dashicons-no hami-restore-li" title="Убрать из списка"></span>
                                 </p>', $id, $text );
 					}
 				} else {
@@ -136,21 +133,20 @@ class Simple_Hidden_Menu {
 	 * @return void
 	 */
 	public function enqueue_assets() {
-		wp_enqueue_style( 'shm-style', $this->url . 'assets/shm-style.css' );
-		$this->inline_style( 'shm-style' );
+		wp_enqueue_style( 'hami-style', $this->url . 'assets/hami-style.css' );
+		$this->inline_style( 'hami-style' );
 
-		wp_enqueue_script( 'shm-script', $this->url . 'assets/shm-script.js', [
+		wp_enqueue_script( 'hami-script', $this->url . 'assets/hami-script.js', [
 			'jquery',
 			'jquery-effects-transfer'
 		], null, true );
 
-		wp_localize_script( 'shm-script', 'shm', [
-			'nonce'       => wp_create_nonce( 'shm-nonce' ),
+		wp_localize_script( 'hami-script', 'hami', [
+			'nonce'       => wp_create_nonce( 'hami-nonce' ),
 			'no_items'    => 'Нет скрытых пунктов меню',
 			'count_items' => count( $this->items ),
 		] );
 	}
-
 
 	/**
 	 * Добавляет на вывод CSS стили для скрытия пунктов меню.
@@ -163,7 +159,7 @@ class Simple_Hidden_Menu {
 		if ( $this->items ) {
 			$css = '';
 			foreach ( $this->items as $id => $text ) {
-				$css .= ".shm-enable #$id { display: none; }";
+				$css .= ".hami-enable #$id { display: none; }";
 			}
 
 			wp_add_inline_style( $handle, $css );
@@ -191,9 +187,9 @@ class Simple_Hidden_Menu {
 	 */
 	public function register_ajax_hooks() {
 		if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
-			add_action( 'wp_ajax_shm_save_status', [ $this, 'ajax_save_status' ] );
-			add_action( 'wp_ajax_shm_add_item', [ $this, 'ajax_add_item' ] );
-			add_action( 'wp_ajax_shm_remove_item', [ $this, 'ajax_remove_item' ] );
+			add_action( 'wp_ajax_hami_save_status', [ $this, 'ajax_save_status' ] );
+			add_action( 'wp_ajax_hami_add_item', [ $this, 'ajax_add_item' ] );
+			add_action( 'wp_ajax_hami_remove_item', [ $this, 'ajax_remove_item' ] );
 		}
 	}
 
@@ -262,6 +258,6 @@ class Simple_Hidden_Menu {
 	 * @return void
 	 */
 	public function check_ajax_referer() {
-		check_ajax_referer( 'shm-nonce' );
+		check_ajax_referer( 'hami-nonce' );
 	}
 }

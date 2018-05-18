@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Simple Hidden Menu
+ * Plugin Name: Hide Admin Menu Items
  * Plugin URI: https://github.com/campusboy87/simple-hidden-menu
  * Description: Плагин позволяет скрывать выбранные пункты меню.
- * Version: 1.0
+ * Version: 1.1
  * Author: campusboy
  * Author URI: https://wp-plus.ru/
  * License: GPL2
@@ -33,13 +33,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @return void
  */
-function shm_init() {
+function hami_init() {
 	if ( is_admin() && current_user_can( 'manage_options' ) ) {
-		require __DIR__ . DIRECTORY_SEPARATOR . 'class-simple-hidden-menu.php';
+		require __DIR__ . DIRECTORY_SEPARATOR . 'class-hide-admin-menu-items.php';
 
-		$plugin = new Simple_Hidden_Menu;
+		$plugin = new Hide_Admin_Menu_Items;
 		$plugin->init();
 	}
 }
 
-add_action( 'plugins_loaded', 'shm_init' );
+add_action( 'plugins_loaded', 'hami_init' );

@@ -1,4 +1,4 @@
-#wpadminbar #wp-admin-bar-shm-switch .ab-item {
+#wpadminbar #wp-admin-bar-hami-switch .ab-item {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -8,21 +8,21 @@
     background: transparent;
 }
 
-#wpadminbar #wp-admin-bar-shm-switch .ab-item .dashicons {
+#wpadminbar #wp-admin-bar-hami-switch .ab-item .dashicons {
     font-family: dashicons, serif;
 }
 
-#wp-admin-bar-shm-switch .switch__container {
+#wp-admin-bar-hami-switch .switch__container {
     width: 50px;
 }
 
-#wp-admin-bar-shm-switch .switch {
+#wp-admin-bar-hami-switch .switch {
     visibility: hidden;
     position: absolute;
     margin-left: -9999px;
 }
 
-#wp-admin-bar-shm-switch .switch + label {
+#wp-admin-bar-hami-switch .switch + label {
     display: block;
     position: relative;
     cursor: pointer;
@@ -30,7 +30,7 @@
     user-select: none;
 }
 
-#wp-admin-bar-shm-switch .switch + label {
+#wp-admin-bar-hami-switch .switch + label {
     padding: 2px;
     width: 45px;
     height: 20px;
@@ -38,14 +38,14 @@
     transition: background 0.4s;
 }
 
-#wp-admin-bar-shm-switch .switch + label:before,
-#wp-admin-bar-shm-switch .switch + label:after {
+#wp-admin-bar-hami-switch .switch + label:before,
+#wp-admin-bar-hami-switch .switch + label:after {
     display: block;
     position: absolute;
     content: "";
 }
 
-#wp-admin-bar-shm-switch .switch + label:before {
+#wp-admin-bar-hami-switch .switch + label:before {
     top: 2px;
     left: 2px;
     bottom: 2px;
@@ -55,7 +55,7 @@
     transition: background 0.4s;
 }
 
-#wp-admin-bar-shm-switch .switch + label:after {
+#wp-admin-bar-hami-switch .switch + label:after {
     top: 4px;
     left: 4px;
     bottom: 4px;
@@ -65,12 +65,12 @@
     transition: margin 0.4s, background 0.4s;
 }
 
-#wp-admin-bar-shm-switch .switch:checked + label:after {
+#wp-admin-bar-hami-switch .switch:checked + label:after {
     margin-left: 25px;
     background-color: #00b9eb;
 }
 
-#wp-admin-bar-shm-switch .switch__content {
+#wp-admin-bar-hami-switch .switch__content {
     display: none;
     position: absolute;
     right: 0;
@@ -80,7 +80,7 @@
     text-align: right;
 }
 
-#wp-admin-bar-shm-switch .switch__content p {
+#wp-admin-bar-hami-switch .switch__content p {
     display: block;
     width: 100%;
     color: #eee;
@@ -88,12 +88,12 @@
     vertical-align: middle;
 }
 
-#wp-admin-bar-shm-switch .switch__content p:hover {
+#wp-admin-bar-hami-switch .switch__content p:hover {
     color: #00b9eb;
     cursor: pointer;
 }
 
-#wp-admin-bar-shm-switch .switch__content p .dashicons {
+#wp-admin-bar-hami-switch .switch__content p .dashicons {
     width: 0;
     overflow: hidden;
     vertical-align: middle;
@@ -104,7 +104,7 @@
     transition: all 0.2s ease-in-out;
 }
 
-#wp-admin-bar-shm-switch .switch__content p:hover .dashicons {
+#wp-admin-bar-hami-switch .switch__content p:hover .dashicons {
     width: 15px;
     color: #ff2401;
 }
@@ -113,11 +113,11 @@
  * Icon for Sidebar Menu Item
  */
 
-.shm-enable #adminmenu .menu-top .shm-remove-li {
+.hami-enable #adminmenu .menu-top .hami-remove-li {
     display: inline-block;
 }
 
-#adminmenu .menu-top .shm-remove-li {
+#adminmenu .menu-top .hami-remove-li {
     display: none;
     position: absolute;
     top: 0;
@@ -136,11 +136,11 @@
     transition-delay: 1s, 0s;
 }
 
-#adminmenu .menu-top:hover .shm-remove-li {
+#adminmenu .menu-top:hover .hami-remove-li {
     left: 0;
 }
 
-#adminmenu .menu-top .shm-remove-li:hover {
+#adminmenu .menu-top .hami-remove-li:hover {
     -moz-transform: scale(1.2);
     -webkit-transform: scale(1.2);
     -o-transform: scale(1.2);

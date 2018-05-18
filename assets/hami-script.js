@@ -2,16 +2,16 @@
     var $sidebar = jQuery('#adminmenu');
     var $sidebarItems = $('li.menu-top', $sidebar);
 
-    var $barShm = $('#wp-admin-bar-shm-switch');
-    var $btnSwitch = $('#switch-flat', $barShm);
+    var $barHami = $('#wp-admin-bar-hami-switch');
+    var $btnSwitch = $('#switch-flat', $barHami);
 
     var noItems = '<p class="no-items">Нет скрытых пунктов меню</p>';
 
     // Добавляет кнопку в пункты меню сайдбара.
-    $sidebarItems.prepend('<span title="Скрыть" class="dashicons dashicons-hidden shm-remove-li"></span>');
+    $sidebarItems.prepend('<span title="Скрыть" class="dashicons dashicons-hidden hami-remove-li"></span>');
 
     // Скрывает пункт меню в сайдбаре по клику и добавляет об этом информацию в админ-бар.
-    $sidebarItems.on('click', '.shm-remove-li', function () {
+    $sidebarItems.on('click', '.hami-remove-li', function () {
         var $li = $(this).closest('li');
         addItemAdminBar($li);
     });
@@ -23,7 +23,7 @@
     });
 
     // Восстанавливает видимость скрытого пункта меню.
-    $barShm.on('click', '.shm-restore-li', function () {
+    $barHami.on('click', '.hami-restore-li', function () {
         var $el = $(this).closest('p');
         var id = $el.data('id');
 
@@ -46,17 +46,17 @@
      */
     function showRemoveIcon(status, save) {
 
-        $('.switch__content p', $barShm).each(function () {
+        $('.switch__content p', $barHami).each(function () {
             var id = $(this).data('id');
             var $el = $('[id=' + id + ']', $sidebar);
 
             if (status) {
                 $el.hide(500, function () {
-                    $('body').addClass('shm-enable');
+                    $('body').addClass('hami-enable');
                 })
             } else {
                 $el.show(500, function () {
-                    $('body').removeClass('shm-enable');
+                    $('body').removeClass('hami-enable');
                 })
             }
         });
@@ -74,9 +74,9 @@
         $.post(
             ajaxurl,
             {
-                'action': 'shm_' + action,
+                'action': 'hami_' + action,
                 'options': data,
-                '_ajax_nonce': shm.nonce
+                '_ajax_nonce': hami.nonce
             }
         );
     }
@@ -96,15 +96,15 @@
         text = $('.wp-menu-name', $e).text();
 
         item = '<span class="text">' + text + '</span>';
-        item += ' <span class="dashicons dashicons-no shm-restore-li"></span>';
+        item += ' <span class="dashicons dashicons-no hami-restore-li"></span>';
         item = '<p data-id="' + id + '">' + item + '</p>';
 
         $template = $(item).css('display', 'none').show(300);
 
-        $('.switch__content', $barShm).append($template);
+        $('.switch__content', $barHami).append($template);
 
         setTimeout(function () {
-            $li.effect("transfer", {to: $('[data-id=' + id + ']', $barShm)}, 500).hide(200);
+            $li.effect("transfer", {to: $('[data-id=' + id + ']', $barHami)}, 500).hide(200);
         }, 300);
 
         recountItemsBar('plus');
@@ -123,14 +123,14 @@
      * @param {string} action
      */
     function recountItemsBar(action) {
-        var count = parseInt(shm.count_items);
-        shm.count_items = action === 'plus' ? ++count : --count;
+        var count = parseInt(hami.count_items);
+        hami.count_items = action === 'plus' ? ++count : --count;
 
-        if (shm.count_items === 0) {
+        if (hami.count_items === 0) {
             $btnSwitch.prop('checked', false);
-            $('.switch__content', $barShm).append(noItems);
+            $('.switch__content', $barHami).append(noItems);
         } else {
-            $('.no-items', $barShm).remove();
+            $('.no-items', $barHami).remove();
         }
 
         if (action === 'plus') {
@@ -141,9 +141,9 @@
 
     // Анимация slideDown->slideUp блока со скрытыми пунктами меню.
     function animateSwitchContent() {
-        $('.switch__content', $barShm).slideDown(300, function () {
+        $('.switch__content', $barHami).slideDown(300, function () {
             setTimeout(function () {
-                $('.switch__content', $barShm).slideUp(150, function () {
+                $('.switch__content', $barHami).slideUp(150, function () {
                     $(this).removeAttr('style');
                 });
             }, 500);
@@ -151,12 +151,12 @@
     }
 
     // Анимация slideDown->slideUp у блока со списком скрытых пунктов меню при наведении мышкой.
-    $barShm
+    $barHami
         .mouseenter(function () {
-            $('.switch__content', $barShm).stop(true).slideDown(250);
+            $('.switch__content', $barHami).stop(true).slideDown(250);
         })
         .mouseleave(function () {
-            $('.switch__content', $barShm).stop(true).slideUp(200, function () {
+            $('.switch__content', $barHami).stop(true).slideUp(200, function () {
                 $(this).removeAttr('style');
             });
         });
