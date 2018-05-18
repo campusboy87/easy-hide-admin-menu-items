@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Hide Admin Menu Items
- * Plugin URI: https://github.com/campusboy87/simple-hidden-menu
+ * Plugin URI: https://github.com/campusboy87/hide-admin-menu-items
  * Description: Плагин позволяет скрывать выбранные пункты меню.
  * Version: 1.1
  * Author: campusboy
