@@ -75,7 +75,7 @@ class Hide_Admin_Menu_Items {
 	 * @return  string $classes
 	 */
 	public function add_body_class( $classes ) {
-		return $this->status || empty( $this->items ) ? $classes . 'hami-enable' : $classes;
+		return $this->status || empty( $this->items ) ? $classes . ' hami-enable' : $classes;
 	}
 
 	/**
