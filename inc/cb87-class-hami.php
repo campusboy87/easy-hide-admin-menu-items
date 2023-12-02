@@ -1,6 +1,6 @@
 <?php
 
-class Hide_Admin_Menu_Items {
+class CB87_Hide_Admin_Menu_Items {
 
 	/**
 	 * Ссылка на папку с плагином с закрывающим слешем на конце.
@@ -36,7 +36,7 @@ class Hide_Admin_Menu_Items {
 	 * @return void
 	 */
 	public function init() {
-		$this->url = plugin_dir_url( __FILE__ );
+		$this->url = plugin_dir_url( dirname( __FILE__ ) );
 		$this->set_properties();
 		$this->register_ajax_hooks();
 
@@ -51,7 +51,7 @@ class Hide_Admin_Menu_Items {
 	 * @return void
 	 */
 	public function set_properties() {
-		$options = get_option( 'hide_admin_menu_items' );
+		$options = get_option( 'cb87_hide_admin_menu_items' );
 
 		$this->options = $options && is_array( $options ) ? $options : [];
 		$this->items   = ! empty( $this->options['items'] ) ? $this->options['items'] : [];
@@ -64,7 +64,7 @@ class Hide_Admin_Menu_Items {
 	 * @return void
 	 */
 	public function save_options() {
-		update_option( 'hide_admin_menu_items', $this->options, false );
+		update_option( 'cb87_hide_admin_menu_items', $this->options, false );
 	}
 
 	/**
