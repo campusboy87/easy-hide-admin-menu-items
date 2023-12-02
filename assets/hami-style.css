@@ -153,3 +153,26 @@
     background: #00b9eb;
     z-index: 9999;
 }
+
+/**
+ * Styles for the container of CB87 plugin settings.
+ * Applied to the settings page layout, which is currently organized as a grid with two columns.
+ */
+
+.cb87-settings__container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.3em;
+    align-items: self-start;
+}
+
+.stuffbox .cb87-settings__main-title,
+.stuffbox .cb87-settings__author-title {
+    border-bottom: 1px solid #ccc;
+    padding: 0 1em 1em 1em;
+}
+
+.stuffbox .cb87-settings__main-content,
+.stuffbox .cb87-settings__author-content {
+    padding: 0 1em;
+}

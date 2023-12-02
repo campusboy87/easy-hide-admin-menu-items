@@ -1,10 +1,12 @@
 <?php
 /**
- * Plugin Name: Hide Admin Menu Items
+ * Plugin Name: CB87 Hide Admin Menu Items
  * Plugin URI: https://github.com/campusboy87/hide-admin-menu-items
+ * Text Domain: cb87-hami
+ * Domain Path: /languages
  * Description: Плагин позволяет скрывать выбранные пункты меню.
  * Version: 1.2
- * Author: campusboy
+ * Author: Campusboy, Dan Zakirov
  * Author URI: https://wp-plus.ru/
  * License: GPL-2.0+
  * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
@@ -23,10 +25,7 @@
  * GNU General Public License for more details.
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
-
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Initializes the plugin.
@@ -34,11 +33,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return void
  */
 function cb87_hami_init() {
+    load_plugin_textdomain( 'cb87-hami', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+
     if ( is_admin() && current_user_can( 'manage_options' ) ) {
-        require __DIR__ . DIRECTORY_SEPARATOR . 'inc/cb87-class-hide-admin-menu-items.php';
-        
-        $plugin = new CB87_Hide_Admin_Menu_Items();
-        $plugin->init();
+        require_once __DIR__ . DIRECTORY_SEPARATOR . 'inc/cb87-class-hami.php';
+        ( new CB87_Hide_Admin_Menu_Items() )->init();
     }
 }
 
