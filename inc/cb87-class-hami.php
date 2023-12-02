@@ -228,14 +228,13 @@ class CB87_Hide_Admin_Menu_Items {
 	 */
 	public function set_properties() {
 
-		$user_specific_menu = get_option('cb87_hide_admin_menu_items', false);
+		$options = get_option('cb87_hide_admin_menu_items', array());
 
-		// Проверяем, отмечена ли галочка
-		if ($user_specific_menu && is_user_logged_in()) {
+		if ($options && is_user_logged_in()) {
 			$user_id = get_current_user_id();
+
 			$user_options = get_user_meta($user_id, 'cb87_hide_admin_menu_users', true);
 
-			// Если есть опции для пользователя, используем их
 			if ($user_options && is_array($user_options)) {
 				$this->options = $user_options;
 				$this->items   = !empty($this->options['items']) ? $this->options['items'] : [];
@@ -244,8 +243,6 @@ class CB87_Hide_Admin_Menu_Items {
 			}
 		}
 
-		// В противном случае используем общие опции
-		$options = get_option('cb87_hide_admin_menu_items', array());
 		$this->options = $options && is_array($options) ? $options : [];
 		$this->items   = !empty($this->options['items']) ? $this->options['items'] : [];
 		$this->status  = !empty($this->options['status']);
