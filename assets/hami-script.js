@@ -5,24 +5,24 @@
     var $barHami = $('#wp-admin-bar-hami-switch');
     var $btnSwitch = $('#switch-flat', $barHami);
 
-    var noItems = '<p class="no-items">Нет скрытых пунктов меню</p>';
+    var noItems = '<p class="no-items">' + hami.no_items + '</p>';
 
-    // Добавляет кнопку в пункты меню сайдбара.
-    $sidebarItems.prepend('<span title="Скрыть" class="dashicons dashicons-hidden hami-remove-li"></span>');
+    // Add a button to the sidebar menu items.
+    $sidebarItems.prepend('<span title="Hide" class="dashicons dashicons-hidden hami-remove-li"></span>');
 
-    // Скрывает пункт меню в сайдбаре по клику и добавляет об этом информацию в админ-бар.
+    // Hide a menu item in the sidebar on click and add information to the admin bar.
     $sidebarItems.on('click', '.hami-remove-li', function () {
         var $li = $(this).closest('li');
         addItemAdminBar($li);
     });
 
-    // Скрывает выбранные пункты меню или отображает их все в сайдбаре.
+    // Hide or show selected menu items in the sidebar.
     $btnSwitch.click(function () {
         var status = $(this).prop('checked');
         showRemoveIcon(status, true);
     });
 
-    // Восстанавливает видимость скрытого пункта меню.
+    // Restore the visibility of a hidden menu item.
     $barHami.on('click', '.hami-restore-li', function () {
         var $el = $(this).closest('p');
         var id = $el.data('id');
@@ -39,13 +39,12 @@
     });
 
     /**
-     * Скрывает или отображает иконки удаления у пунков меню в сайдбаре.
+     * Show or hide remove icons for menu items in the sidebar.
      *
      * @param {boolean} status
      * @param {boolean} save
      */
     function showRemoveIcon(status, save) {
-
         $('.switch__content p', $barHami).each(function () {
             var id = $(this).data('id');
             var $el = $('[id=' + id + ']', $sidebar);
@@ -65,10 +64,10 @@
     }
 
     /**
-     * Сохраняет данные.
+     * Save data.
      *
-     * @param {string} action   Действие (status, remove_item, add_item).
-     * @param {object} data     Данные
+     * @param {string} action   Action (status, remove_item, add_item).
+     * @param {object} data     Data
      */
     function save_option(action, data) {
         $.post(
@@ -82,7 +81,7 @@
     }
 
     /**
-     *  Добавляет элемент в админ-бар.
+     * Add an element to the admin bar.
      *
      * @param {jQuery} $li
      */
@@ -118,7 +117,7 @@
     }
 
     /**
-     * Пересчитывает количество скрытых пунктов меню.
+     * Recount the number of hidden menu items.
      *
      * @param {string} action
      */
@@ -139,7 +138,7 @@
         }
     }
 
-    // Анимация slideDown->slideUp блока со скрытыми пунктами меню.
+    // SlideDown-> SlideUp animation of the block with hidden menu items.
     function animateSwitchContent() {
         $('.switch__content', $barHami).slideDown(300, function () {
             setTimeout(function () {
@@ -150,7 +149,7 @@
         });
     }
 
-    // Анимация slideDown->slideUp у блока со списком скрытых пунктов меню при наведении мышкой.
+    // SlideDown-> SlideUp animation of the block with hidden menu items on hover.
     $barHami
         .mouseenter(function () {
             $('.switch__content', $barHami).stop(true).slideDown(250);
