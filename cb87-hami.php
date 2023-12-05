@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/campusboy87/hide-admin-menu-items
  * Text Domain: cb87-hami
  * Domain Path: /languages
- * Description: Плагин позволяет скрывать выбранные пункты меню.
+ * Description: The plugin allows hiding selected menu items.
  * Version: 1.2
  * Author: Campusboy, Dan Zakirov
  * Author URI: https://wp-plus.ru/
