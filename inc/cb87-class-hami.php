@@ -360,6 +360,7 @@ class CB87_Hide_Admin_Menu_Items {
 		wp_localize_script( 'hami-script', 'hami', [
 			'nonce'       => wp_create_nonce( 'hami-nonce' ),
 			'no_items'    => __( 'No hidden menu items', 'cb87-hami' ),
+			'hid'    => __( 'Hide menu', 'cb87-hami' ),
 			'count_items' => count( $this->items ),
 		] );
 	}

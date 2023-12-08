@@ -8,7 +8,7 @@
     var noItems = '<p class="no-items">' + hami.no_items + '</p>';
 
     // Add a button to the sidebar menu items.
-    $sidebarItems.prepend('<span title="Hide" class="dashicons dashicons-hidden hami-remove-li"></span>');
+    $sidebarItems.prepend('<span title="' + hami.hid + '" class="dashicons dashicons-hidden hami-remove-li"></span>');
 
     // Hide a menu item in the sidebar on click and add information to the admin bar.
     $sidebarItems.on('click', '.hami-remove-li', function () {
