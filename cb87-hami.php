@@ -5,7 +5,7 @@
  * Text Domain: cb87-hami
  * Domain Path: /languages
  * Description: The plugin allows hiding selected menu items.
- * Version: 1.2
+ * Version: 1.3
  * Author: Campusboy, Dan Zakirov
  * Author URI: https://wp-plus.ru/
  * License: GPL-2.0+

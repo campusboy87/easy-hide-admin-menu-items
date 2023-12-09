@@ -1,6 +1,7 @@
 (function ($) {
     var $sidebar = jQuery('#adminmenu');
     var $sidebarItems = $('li.menu-top', $sidebar);
+    var $sidebarItemsParents = $('.wp-submenu > li', $sidebar);
 
     var $barHami = $('#wp-admin-bar-hami-switch');
     var $btnSwitch = $('#switch-flat', $barHami);
@@ -8,10 +9,22 @@
     var noItems = '<p class="no-items">' + hami.no_items + '</p>';
 
     // Add a button to the sidebar menu items.
-    $sidebarItems.prepend('<span title="Hide" class="dashicons dashicons-hidden hami-remove-li"></span>');
+    $sidebarItems.prepend('<span title="' + hami.hid + '" class="dashicons dashicons-hidden hami-remove-li"></span>');
 
     // Hide a menu item in the sidebar on click and add information to the admin bar.
     $sidebarItems.on('click', '.hami-remove-li', function () {
+        var $li = $(this).closest('li');
+        addItemAdminBar($li);
+    });
+
+    // Check if the hide_submenu option is set
+    if (hami.hide_submenu) {
+        // Add a button to the sidebar submenu menu items.
+        $sidebarItemsParents.prepend('<span title="' + hami.hid + '" class="dashicons dashicons-hidden hami-remove-sub-li"></span>');
+    }
+
+    // Hide a menu item in the sidebar on click and add information to the admin bar.
+    $sidebarItemsParents.on('click', '.hami-remove-sub-li', function () {
         var $li = $(this).closest('li');
         addItemAdminBar($li);
     });
@@ -31,7 +44,17 @@
             $el.remove();
         });
 
-        $('#' + id, $sidebar).show(300);
+        var selector;
+        if (id.includes('.php')) {
+            selector = 'a[href^="' + id + '"]';
+            $(selector).closest('li').fadeIn(300);
+        } else {
+            selector = id;
+        }
+
+        $(selector, $sidebar).fadeIn(300, function () {
+            $(this).css('display', 'block');
+        });
 
         recountItemsBar('minus');
 
@@ -47,17 +70,39 @@
     function showRemoveIcon(status, save) {
         $('.switch__content p', $barHami).each(function () {
             var id = $(this).data('id');
-            var $el = $('[id=' + id + ']', $sidebar);
+
+            var selector;
+            if (id.includes('.php')) {
+                selector = 'a[href^="' + id + '"]';
+            } else {
+                selector = id;
+            }
+
+            var $el = $(selector, $sidebar);
+
+            /* TODO: Переделать и оптимизировать анимацию */
 
             if (status) {
-                $el.hide(500, function () {
-                    $('body').addClass('hami-enable');
-                })
+                if (id.includes('.php')) {
+                    $el.fadeOut(300, function () {
+                        $(this).css('display', 'none');
+                        $('body').addClass('hami-enable');
+                    });
+                } else {
+                    $el.fadeOut(300, function () {
+                        $(this).css('display', 'none');
+                        $('body').addClass('hami-enable');
+                        $(this).closest('li').fadeOut(300);
+                    });
+                }
             } else {
-                $el.show(500, function () {
+                $el.fadeIn(300, function () {
+                    $(this).css('display', 'block');
                     $('body').removeClass('hami-enable');
-                })
+                    $(this).closest('li').fadeIn(300);
+                });
             }
+
         });
 
         save && save_option('save_status', {'status': status * 1});
@@ -91,8 +136,14 @@
         $e = $($li).clone();
         $e.find('span').remove();
 
-        id = $e.attr('id');
+        id = '#' + $e.attr('id');
         text = $('.wp-menu-name', $e).text();
+
+        var hasParentSubmenu = $li.closest('.wp-submenu').length > 0;
+        if (hasParentSubmenu) {
+            id = $e.find('a').attr('href');
+            text = $li.closest('.wp-has-submenu').find('.wp-menu-name').text() + ' > ' + $($e).text();
+        }
 
         item = '<span class="text">' + text + '</span>';
         item += ' <span class="dashicons dashicons-no hami-restore-li"></span>';
@@ -103,7 +154,7 @@
         $('.switch__content', $barHami).append($template);
 
         setTimeout(function () {
-            $li.effect("transfer", {to: $('[data-id=' + id + ']', $barHami)}, 500).hide(200);
+            $li.effect("transfer", {to: $('[data-id="' + id + '"]', $barHami)}, 500).hide(200);
         }, 300);
 
         recountItemsBar('plus');
