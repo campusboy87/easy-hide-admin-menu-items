@@ -4,7 +4,7 @@ Donate link: #
 Tags: admin menu, hide menu, customization menu
 Requires at least: 4.8
 Tested up to: 6.4
-Stable tag: 1.2
+Stable tag: 1.3
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,6 +32,9 @@ A: After installing the plugin, a control manager will appear in the admin bar; 
 A: Yes, you can. We introduced an additional settings page that we will improve over time. Please send your suggestions to [support](mailto:support@example.com).
 
 == Changelog ==
+
+= 1.3 =
+- Added the ability to hide child menus.
 
 = 1.2 =
 - Added support for WordPress 6.4.
