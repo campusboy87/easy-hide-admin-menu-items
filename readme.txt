@@ -1,4 +1,4 @@
-=== CB87 Hide Admin Menu Items ===
+=== Easy Hide Admin Menu Items ===
 Contributors: campusboy1987, alexodiy
 Donate link: #
 Tags: admin menu, hide menu, customization menu
@@ -11,16 +11,16 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-CB87 Hide Admin Menu Items is a plugin designed for the convenience of using the WordPress admin panel by hiding unnecessary menu items. On some websites, the admin panel can become cluttered with various menus and settings, and CB87 Hide Admin Menu Items is intended to help users easily customize their administrative space.
+Easy Hide Admin Menu Items is a plugin designed for the convenience of using the WordPress admin panel by hiding unnecessary menu items. On some websites, the admin panel can become cluttered with various menus and settings, and Easy Hide Admin Menu Items is intended to help users easily customize their administrative space.
 
 ### Why is it convenient?
 
-On some websites with numerous plugins and extensions, the admin panel can become confusing due to an excess of menus. CB87 Hide Admin Menu Items allows you to easily hide the items you don't need, providing cleanliness and convenience in usage.
+On some websites with numerous plugins and extensions, the admin panel can become confusing due to an excess of menus. Easy Hide Admin Menu Items allows you to easily hide the items you don't need, providing cleanliness and convenience in usage.
 
 == Installation ==
 
 1. Download the plugin archive and extract it.
-2. Upload the `cb87-hami` folder to the `wp-content/plugins/` directory on your server.
+2. Upload the `ehami` folder to the `wp-content/plugins/` directory on your server.
 3. Activate the plugin through the "Plugins" section in the WordPress admin panel.
 
 == Frequently Asked Questions ==

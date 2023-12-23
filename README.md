@@ -12,7 +12,7 @@
 
 На некоторых сайтах в административной панели существует множество меню и различных настроек, которые могут быть редко используемыми или даже излишними. **Easy Hide Admin Menu Items** позволяет администраторам сайта легко скрывать такие элементы, что повышает эффективность работы и улучшает общий опыт в управлении сайтом.
 
-![Интерфейс плагина Easy Hide Admin Menu Items](https://raw.githubusercontent.com/dan-zakirov/cb87-hami/dan_zakirov/assets/img/settings_submenu.png)
+![Интерфейс плагина Easy Hide Admin Menu Items](https://raw.githubusercontent.com/dan-zakirov/ehami/dan_zakirov/assets/img/settings_submenu.png)
 
 ### Простота использования для обычного пользователя
 
@@ -24,7 +24,7 @@
 
 ## Настройки
 
-![Настойки плагина Easy Hide Admin Menu Items](https://raw.githubusercontent.com/dan-zakirov/cb87-hami/dan_zakirov/assets/img/settings.png)
+![Настойки плагина Easy Hide Admin Menu Items](https://raw.githubusercontent.com/dan-zakirov/ehami/dan_zakirov/assets/img/settings.png)
 
 Плагин условно предоставляет два режима работы:
 
@@ -53,7 +53,7 @@
 Чтобы установить плагин Easy Hide Admin Menu Items с GitHub, следуйте простым шагам:
 
 1. **Скачайте ZIP-архив:**
-    - Перейдите на [страницу репозитория](https://github.com/campusboy87/cb87-hami).
+    - Перейдите на [страницу репозитория](https://github.com/campusboy87/ehami).
     - Нажмите на кнопку "Code" и выберите "Download ZIP".
 
 2. **Переместите плагин в WordPress:**

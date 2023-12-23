@@ -1,42 +1,46 @@
 (function ($) {
-    var $sidebar = jQuery('#adminmenu');
+    const plugin = ehami;
+
+    var $sidebar = $('#adminmenu');
     var $sidebarItems = $('li.menu-top', $sidebar);
     var $sidebarItemsParents = $('.wp-submenu > li', $sidebar);
 
-    var $barHami = $('#wp-admin-bar-hami-switch');
+    var $barHami = $('#wp-admin-bar-ehami-switch');
     var $btnSwitch = $('#switch-flat', $barHami);
 
-    var noItems = '<p class="no-items">' + hami.no_items + '</p>';
+    var noItems = '<p class="no-items">' + plugin.no_items + '</p>';
 
     // Add a button to the sidebar menu items.
-    $sidebarItems.prepend('<span title="' + hami.hid + '" class="dashicons dashicons-hidden hami-remove-li"></span>');
+    $sidebarItems.prepend('<span title="' + plugin.hid + '" class="dashicons dashicons-hidden ehami-remove-li"></span>');
 
     // Hide a menu item in the sidebar on click and add information to the admin bar.
-    $sidebarItems.on('click', '.hami-remove-li', function () {
+    $sidebarItems.on('click', '.ehami-remove-li', function () {
         var $li = $(this).closest('li');
         addItemAdminBar($li);
     });
 
     // Check if the hide_submenu option is set
-    if (hami.hide_submenu) {
+    if (plugin.hide_submenu) {
         // Add a button to the sidebar submenu menu items.
-        $sidebarItemsParents.prepend('<span title="' + hami.hid + '" class="dashicons dashicons-hidden hami-remove-sub-li"></span>');
+        $sidebarItemsParents.prepend('<span title="' + plugin.hid + '" class="dashicons dashicons-hidden ehami-remove-sub-li"></span>');
     }
 
     // Hide a menu item in the sidebar on click and add information to the admin bar.
-    $sidebarItemsParents.on('click', '.hami-remove-sub-li', function () {
+    $sidebarItemsParents.on('click', '.ehami-remove-sub-li', function () {
         var $li = $(this).closest('li');
         addItemAdminBar($li);
     });
 
     // Hide or show selected menu items in the sidebar.
     $btnSwitch.click(function () {
+        console.log('$btnSwitch');
         var status = $(this).prop('checked');
         showRemoveIcon(status, true);
     });
 
     // Restore the visibility of a hidden menu item.
-    $barHami.on('click', '.hami-restore-li', function () {
+    $barHami.on('click', '.ehami-restore-li', function () {
+        console.log('$barHami');
         var $el = $(this).closest('p');
         var id = $el.data('id');
 
@@ -58,7 +62,7 @@
 
         recountItemsBar('minus');
 
-        save_option('remove_item', {'id': id});
+        save_options('remove_item', {'id': id});
     });
 
     /**
@@ -70,6 +74,10 @@
     function showRemoveIcon(status, save) {
         $('.switch__content p', $barHami).each(function () {
             var id = $(this).data('id');
+
+            if (!id) {
+                return;
+            }
 
             var selector;
             if (id.includes('.php')) {
@@ -86,26 +94,26 @@
                 if (id.includes('.php')) {
                     $el.fadeOut(300, function () {
                         $(this).css('display', 'none');
-                        $('body').addClass('hami-enable');
+                        $('body').addClass('ehami-enable');
                     });
                 } else {
                     $el.fadeOut(300, function () {
                         $(this).css('display', 'none');
-                        $('body').addClass('hami-enable');
+                        $('body').addClass('ehami-enable');
                         $(this).closest('li').fadeOut(300);
                     });
                 }
             } else {
                 $el.fadeIn(300, function () {
                     $(this).css('display', 'block');
-                    $('body').removeClass('hami-enable');
+                    $('body').removeClass('ehami-enable');
                     $(this).closest('li').fadeIn(300);
                 });
             }
 
         });
 
-        save && save_option('save_status', {'status': status * 1});
+        save && save_options('save_status', {'status': status * 1});
     }
 
     /**
@@ -114,13 +122,13 @@
      * @param {string} action   Action (status, remove_item, add_item).
      * @param {object} data     Data
      */
-    function save_option(action, data) {
+    function save_options(action, data) {
         $.post(
             ajaxurl,
             {
-                'action': 'hami_' + action,
+                'action': 'ehami_' + action,
                 'options': data,
-                '_ajax_nonce': hami.nonce
+                '_ajax_nonce': plugin.nonce
             }
         );
     }
@@ -146,7 +154,7 @@
         }
 
         item = '<span class="text">' + text + '</span>';
-        item += ' <span class="dashicons dashicons-no hami-restore-li"></span>';
+        item += ' <span class="dashicons dashicons-no ehami-restore-li"></span>';
         item = '<p data-id="' + id + '">' + item + '</p>';
 
         $template = $(item).css('display', 'none').show(300);
@@ -159,7 +167,7 @@
 
         recountItemsBar('plus');
 
-        save_option('add_item', {
+        save_options('add_item', {
             'item': {
                 'id': id,
                 'text': text
@@ -173,10 +181,10 @@
      * @param {string} action
      */
     function recountItemsBar(action) {
-        var count = parseInt(hami.count_items);
-        hami.count_items = action === 'plus' ? ++count : --count;
+        var count = parseInt(plugin.count_items);
+        plugin.count_items = action === 'plus' ? ++count : --count;
 
-        if (hami.count_items === 0) {
+        if (plugin.count_items === 0) {
             $btnSwitch.prop('checked', false);
             $('.switch__content', $barHami).append(noItems);
         } else {
