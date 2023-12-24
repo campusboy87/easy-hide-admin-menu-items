@@ -18,8 +18,6 @@
     function save_options(action, data) {
         $container.addClass('--saving');
 
-        console.log(data);
-
         const xhr = $.post(
             ajaxurl,
             {
@@ -31,7 +29,14 @@
 
         xhr.done(function () {
             $container.removeClass('--saving');
+            location.reload();
         });
+
+        xhr.fail(function (jqXHR, textStatus, errorThrown) {
+            $container.removeClass('--saving');
+            console.error('Error save options:', textStatus, errorThrown);
+        });
+
     }
 
 })(jQuery);
