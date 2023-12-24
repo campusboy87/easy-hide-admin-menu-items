@@ -33,7 +33,6 @@
 
     // Hide or show selected menu items in the sidebar.
     $btnSwitch.click(function () {
-        console.log('$btnSwitch');
         var status = $(this).prop('checked');
         showRemoveIcon(status, true);
     });
@@ -81,20 +80,22 @@
 
             var selector;
             if (id.includes('.php')) {
-                selector = 'a[href^="' + id + '"]';
+                selector = 'a[href="' + id + '"]';
             } else {
                 selector = id;
             }
 
             var $el = $(selector, $sidebar);
 
-            /* TODO: Переделать и оптимизировать анимацию */
-
             if (status) {
                 if (id.includes('.php')) {
-                    $el.fadeOut(300, function () {
-                        $(this).css('display', 'none');
-                        $('body').addClass('ehami-enable');
+                    $el.each(function () {
+                        if (!$(this).hasClass('wp-has-submenu')) {
+                            $(this).fadeOut(300, function () {
+                                $(this).css('display', 'none');
+                                $('body').addClass('ehami-enable');
+                            });
+                        }
                     });
                 } else {
                     $el.fadeOut(300, function () {
@@ -139,7 +140,7 @@
      * @param {jQuery} $li
      */
     function addItemAdminBar($li) {
-        var $e, id, text, $template, item;
+        let $e, id, text, $template, item;
 
         $e = $($li).clone();
         $e.find('span').remove();
@@ -147,10 +148,12 @@
         id = '#' + $e.attr('id');
         text = $('.wp-menu-name', $e).text();
 
-        var hasParentSubmenu = $li.closest('.wp-submenu').length > 0;
+        const hasParentSubmenu = $li.closest('.wp-submenu').length > 0;
         if (hasParentSubmenu) {
             id = $e.find('a').attr('href');
-            text = $li.closest('.wp-has-submenu').find('.wp-menu-name').text() + ' > ' + $($e).text();
+            const $menuName = $li.closest('.wp-has-submenu').find('.wp-menu-name');
+            const $menuNameClone = $menuName.clone().find('span').remove().end();
+            text = $menuNameClone.text() + ' > ' + $($e).text();
         }
 
         item = '<span class="text">' + text + '</span>';
