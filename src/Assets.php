@@ -38,7 +38,7 @@ class Assets {
 		foreach ( $items as $id => $text ) {
 			if ( str_contains( $id, '.php' ) ) {
 				// for submenu items
-				$css .= sprintf( '.ehami-enable #adminmenu .wp-submenu a[href^="%s"] { display: none; }', esc_attr( $id ) );
+				$css .= sprintf( '.ehami-enable #adminmenu .wp-submenu a[href="%s"] { display: none; }', esc_attr( $id ) );
 			} elseif ( str_contains( $id, '#' ) ) {
 				// for parent menu items
 				$css .= sprintf( '.ehami-enable #adminmenu %s { display: none; }', esc_attr( $id ) );
