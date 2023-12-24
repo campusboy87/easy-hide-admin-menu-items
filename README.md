@@ -24,7 +24,7 @@
 
 ## Настройки
 
-![[Настойки плагина Easy Hide Admin Menu Items](https://github.com/campusboy87/easy-hide-admin-menu-items/assets/41396370/7c9080de-d35e-4b22-9bfb-bdeac28c1c71)
+![Настойки плагина Easy Hide Admin Menu Items](https://github.com/campusboy87/easy-hide-admin-menu-items/assets/41396370/25a510f5-e721-4b34-b091-f2216065927f)
 
 Плагин условно предоставляет два режима работы:
 
