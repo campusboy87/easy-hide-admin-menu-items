@@ -1,0 +1,134 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Easy Hide Admin Menu Items\n"
+"POT-Creation-Date: 2023-12-28 17:33+0300\n"
+"PO-Revision-Date: 2023-12-28 17:33+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: ehami.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: src/Assets.php:22 templates/switcher.php:25
+msgid "No hidden menu items"
+msgstr ""
+
+#: src/Assets.php:23
+msgid "Hide menu"
+msgstr ""
+
+#: src/Settings_Page.php:17 src/Settings_Page.php:18
+msgid "Admin Menu Settings"
+msgstr ""
+
+#: src/Settings_Page.php:37
+msgid "Settings"
+msgstr ""
+
+#: templates/admin-page-options.php:7
+msgid "User-specific settings"
+msgstr ""
+
+#: templates/admin-page-options.php:11
+msgid "Allow other users to set their own preferences."
+msgstr ""
+
+#: templates/admin-page-options.php:12
+msgid ""
+"If checked, each user with access to the admin panel can save hidden menu "
+"settings individually for their own preferences."
+msgstr ""
+
+#: templates/admin-page-options.php:15
+msgid "Child Menu"
+msgstr ""
+
+#: templates/admin-page-options.php:19
+msgid "Allow hiding child admin menus"
+msgstr ""
+
+#: templates/admin-page-options.php:20
+msgid ""
+"If checked, you can hide the child menu. This may be useful when there are "
+"too many child menus causing distraction."
+msgstr ""
+
+#: templates/admin-page-options.php:23
+msgid "Uninstall plugin"
+msgstr ""
+
+#: templates/admin-page-options.php:27
+msgid "Allow the deletion of all plugin data after it is deleted"
+msgstr ""
+
+#: templates/admin-page-options.php:28
+msgid ""
+"If checked, all data (option and user metadata) will be deleted when the "
+"plugin is deleted."
+msgstr ""
+
+#: templates/admin-page-options.php:35
+msgid "Easy Hide Admin Menu Items Settings"
+msgstr ""
+
+#: templates/admin-page-options.php:44
+msgid "Main Settings"
+msgstr ""
+
+#: templates/admin-page-options.php:83
+msgid "Save Settings"
+msgstr ""
+
+#: templates/admin-page-options.php:93
+msgid "Message From the Author"
+msgstr ""
+
+#: templates/admin-page-options.php:95
+msgid ""
+"Thank you for using Easy Hide Admin Menu Items! Your feedback and comments "
+"are highly valuable to us and will assist us in improving the plugin further."
+msgstr ""
+
+#: templates/admin-page-options.php:96
+msgid "For support, please contact our helpdesk."
+msgstr ""
+
+#: templates/switcher.php:9
+msgid "Hide or show selected menu items"
+msgstr ""
+
+#: templates/switcher.php:21
+msgid "Remove from the list"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Easy Hide Admin Menu Items"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/campusboy87/easy-hide-admin-menu-items"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "The plugin allows hiding selected admin menu items."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Campusboy, Dan Zakirov"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://wp-plus.ru"
+msgstr ""
