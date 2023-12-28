@@ -5,7 +5,7 @@ Tags: admin menu, hide menu, customization menu
 Requires at least: 4.8
 Tested up to: 6.4
 Stable tag: 1.3
-Requires PHP: 5.6
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,10 @@ A: After installing the plugin, a control manager will appear in the admin bar; 
 
 **Q: Can I make the menu hide for each user?**
 A: Yes, you can. We introduced an additional settings page that we will improve over time. Please send your suggestions to [support](mailto:support@example.com).
+
+== Screenshots ==
+1. Screen 1
+2. Screen 2
 
 == Changelog ==
 
