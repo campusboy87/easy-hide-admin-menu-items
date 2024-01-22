@@ -64,7 +64,9 @@ class Ajax {
 	}
 
 	private function get_input_option( string $key ) {
-		return $_POST['options'][ $key ] ?? null;
+		$value = $_POST['options'][ $key ] ?? '';
+
+		return map_deep( $value, 'sanitize_text_field' );
 	}
 
 }

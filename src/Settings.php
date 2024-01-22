@@ -70,11 +70,11 @@ class Settings {
 			$options['items'] = array_map( 'sanitize_text_field', $new_options['items'] );
 		}
 
-		if ( isset( $options['save_individually'], $options['items'] ) ) {
-			update_user_meta( get_current_user_id(), self::USER_ITEMS_META_KEY, $options['items'] );
-		}
-
 		update_option( self::OPTION_NAME, $options, false );
+
+		if ( isset( $options['save_individually'], $options['items'] ) ) {
+			update_user_meta( get_current_user_id(), self::USER_ITEMS_META_KEY, array_map( 'sanitize_text_field', $options['items'] ) );
+		}
 	}
 
 	public function add_menu_item( string $id, string $text ) {
