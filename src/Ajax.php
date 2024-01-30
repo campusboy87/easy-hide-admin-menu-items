@@ -12,7 +12,7 @@ class Ajax {
 	}
 
 	public function action_save_status_to_db() {
-		$this->check_ajax_referer();
+		$this->check_ajax_referer_and_capability( 'read' );
 
 		plugin()->settings->save_options( [
 			'status' => $this->get_input_option( 'status' ),
@@ -22,7 +22,7 @@ class Ajax {
 	}
 
 	public function action_save_settings_to_db() {
-		$this->check_ajax_referer();
+		$this->check_ajax_referer_and_capability( 'manage_options' );
 
 		plugin()->settings->save_options( [
 			'save_individually'            => $this->get_input_option( 'save_individually' ),
@@ -34,7 +34,7 @@ class Ajax {
 	}
 
 	public function action_add_item_to_db() {
-		$this->check_ajax_referer();
+		$this->check_ajax_referer_and_capability( 'read' );
 
 		$data = $this->get_input_option( 'item' );
 		$id   = $data['id'] ?? null;
@@ -48,7 +48,7 @@ class Ajax {
 	}
 
 	public function action_remove_item_to_db() {
-		$this->check_ajax_referer();
+		$this->check_ajax_referer_and_capability( 'read' );
 
 		$id = $this->get_input_option( 'id' );
 
@@ -59,8 +59,12 @@ class Ajax {
 		wp_die();
 	}
 
-	public function check_ajax_referer() {
+	public function check_ajax_referer_and_capability( string $capability ) {
 		check_ajax_referer( 'ehami-nonce' );
+
+		if ( ! current_user_can( $capability ) ) {
+			wp_die( __( 'Sorry, you are not allowed to manage options for this site.' ), 403 );
+		}
 	}
 
 	private function get_input_option( string $key ) {

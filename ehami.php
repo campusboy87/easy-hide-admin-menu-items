@@ -5,7 +5,7 @@
  * Text Domain: ehami
  * Domain Path: /languages
  * Description: The plugin allows hiding selected admin menu items.
- * Version: 1.3.1
+ * Version: 1.3.2
  * Author: Campusboy, Dan Zakirov
  * Author URI: https://wp-plus.ru
  * License: GPL-2.0+
