@@ -63,12 +63,15 @@ class Ajax {
 		check_ajax_referer( 'ehami-nonce' );
 
 		if ( ! current_user_can( $capability ) ) {
-			wp_die( __( 'Sorry, you are not allowed to manage options for this site.' ), 403 );
+			wp_die(
+				esc_html__( 'Sorry, you are not allowed to manage options for this site.' ),
+				403
+			);
 		}
 	}
 
 	private function get_input_option( string $key ) {
-		$value = $_POST['options'][ $key ] ?? '';
+		$value = wp_unslash( $_POST['options'][ $key ] ?? '' ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.NonceVerification.Missing
 
 		return map_deep( $value, 'sanitize_text_field' );
 	}

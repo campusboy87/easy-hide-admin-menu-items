@@ -33,8 +33,8 @@ class Settings_Page {
 
 		$settings_link = sprintf(
 			'<a href="%s">%s</a>',
-			admin_url( '/' . self::PARENT_SLUG . '?page=ehami-settings' ),
-			__( 'Settings', 'ehami' )
+			esc_url( admin_url( '/' . self::PARENT_SLUG . '?page=ehami-settings' ) ),
+			esc_html__( 'Settings', 'ehami' )
 		);
 		array_unshift( $actions, $settings_link );
 

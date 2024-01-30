@@ -10,14 +10,14 @@ $items = plugin()->settings->items;
 	<div class="switch__content">
 		<?php
 		if ( $items ) {
-			foreach ( $items as $id => $text ) {
+			foreach ( $items as $item_id => $item_text ) {
 				printf(
 					'<p data-id="%s">
 						<span class="text">%s</span>
 						<span class="dashicons dashicons-no ehami-restore-li" title="%s"></span>
 					</p>',
-					esc_attr( $id ),
-					esc_html( $text ),
+					esc_attr( $item_id ),
+					esc_html( $item_text ),
 					esc_attr__( 'Remove from the list', 'ehami' )
 				);
 			}

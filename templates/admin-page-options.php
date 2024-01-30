@@ -61,10 +61,11 @@ $fields = [
 
 										<div class="ehami-settings__main-field">
 											<label for="<?php echo esc_attr( $field['id'] ); ?>">
-												<input type="checkbox"
-													   id="<?php echo esc_attr( $field['id'] ); ?>"
-													   name="<?php echo esc_attr( $field['name'] ); ?>"
-													   value="1" <?php checked( $field['value'], '1' ); ?>
+												<input
+														type="checkbox"
+														id="<?php echo esc_attr( $field['id'] ); ?>"
+														name="<?php echo esc_attr( $field['name'] ); ?>"
+														value="1" <?php checked( $field['value'], '1' ); ?>
 												>
 												<?php echo esc_html( $field['description'] ); ?>
 											</label>

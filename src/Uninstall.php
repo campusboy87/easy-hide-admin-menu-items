@@ -46,7 +46,7 @@ class Uninstall {
 		$user_ids = get_users( [
 			'blog_id'      => $blog_id,
 			'fields'       => 'ID',
-			'meta_key'     => $meta_key,
+			'meta_key'     => $meta_key, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
 			'meta_compare' => 'EXISTS',
 		] );
 

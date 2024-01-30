@@ -9,14 +9,20 @@ class Assets {
 	}
 
 	public function enqueue_assets() {
-		wp_enqueue_style( 'ehami-style', plugin()->url . '/assets/css/style.css' );
+		wp_enqueue_style( 'ehami-style', plugin()->url . '/assets/css/style.css', [], plugin()->info['version'] );
 		$this->add_inline_style( 'ehami-style' );
 
-		wp_enqueue_script( 'ehami-user-interface', plugin()->url . '/assets/js/user-interface.js', [
-			'jquery',
-			'jquery-effects-transfer',
-		], null, true );
-		wp_enqueue_script( 'ehami-settings-page', plugin()->url . '/assets/js/settings-page.js', [ 'jquery' ], null, true );
+		wp_enqueue_script(
+			'ehami-user-interface',
+			plugin()->url . '/assets/js/user-interface.js',
+			[
+				'jquery',
+				'jquery-effects-transfer',
+			],
+			plugin()->info['version'],
+			true
+		);
+		wp_enqueue_script( 'ehami-settings-page', plugin()->url . '/assets/js/settings-page.js', [ 'jquery' ], plugin()->info['version'], true );
 		$data = [
 			'nonce'        => wp_create_nonce( 'ehami-nonce' ),
 			'no_items'     => __( 'No hidden menu items', 'ehami' ),
