@@ -5,7 +5,7 @@ namespace EHAMI;
 class Assets {
 
 	public function init() {
-		add_action( 'in_admin_footer', [ $this, 'enqueue_assets' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_assets' ] );
 	}
 
 	public function enqueue_assets() {
