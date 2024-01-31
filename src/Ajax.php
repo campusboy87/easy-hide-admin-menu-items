@@ -24,7 +24,7 @@ class Ajax {
 		}
 
 		plugin()->settings->save_options( [
-			'status' => (bool) ( $_POST['options']['status'] ?? false ),
+			'status' => (bool) sanitize_text_field( wp_unslash( $_POST['options']['status'] ?? false ) ),
 		] );
 
 		wp_die();
@@ -41,9 +41,9 @@ class Ajax {
 		}
 
 		plugin()->settings->save_options( [
-			'save_individually'            => (bool) ( $_POST['options']['save_individually'] ?? false ),
-			'hide_submenu'                 => (bool) ( $_POST['options']['hide_submenu'] ?? false ),
-			'remove_all_data_on_uninstall' => (bool) ( $_POST['options']['remove_all_data_on_uninstall'] ?? false ),
+			'save_individually'            => (bool) sanitize_text_field( wp_unslash( $_POST['options']['save_individually'] ?? false ) ),
+			'hide_submenu'                 => (bool) sanitize_text_field( wp_unslash( $_POST['options']['hide_submenu'] ?? false ) ),
+			'remove_all_data_on_uninstall' => (bool) sanitize_text_field( wp_unslash( $_POST['options']['remove_all_data_on_uninstall'] ?? false ) ),
 		] );
 
 		wp_die();
@@ -59,8 +59,8 @@ class Ajax {
 			);
 		}
 
-		$id   = sanitize_text_field( wp_unslash( $_POST['options']['items']['id'] ?? '' ) );
-		$text = sanitize_text_field( wp_unslash( $_POST['options']['items']['text'] ?? '' ) );
+		$id   = sanitize_text_field( wp_unslash( $_POST['options']['item']['id'] ?? '' ) );
+		$text = sanitize_text_field( wp_unslash( $_POST['options']['item']['text'] ?? '' ) );
 
 		if ( $id && $text ) {
 			plugin()->settings->add_menu_item( $id, $text );
@@ -79,7 +79,7 @@ class Ajax {
 			);
 		}
 
-		$id = (int) ( $_POST['options']['id'] ?? 0 );
+		$id = (int) sanitize_text_field( wp_unslash( $_POST['options']['id'] ?? 0 ) );
 
 		if ( $id ) {
 			plugin()->settings->remove_menu_item( $id );
