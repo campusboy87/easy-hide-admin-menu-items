@@ -32,23 +32,29 @@ class Settings {
 	}
 
 	public function set_options() {
-		$this->options = array_merge( self::DEFAULT_OPTIONS, $this->get_raw_options() );
+		$this->options = array_merge( self::DEFAULT_OPTIONS, $this->get_db_options() );
 
 		if ( $this->options['save_individually'] ) {
 			$this->options['items'] = get_user_meta( get_current_user_id(), self::USER_ITEMS_META_KEY, true ) ?: [];
 		}
 	}
 
-	public function get_raw_options(): array {
+	public function get_db_options(): array {
 		return get_option( self::OPTION_NAME, [] );
 	}
 
-	public function get_options(): array {
-		return $this->options;
+	public function save_options( array $new_options ) {
+		$options = $this->sanitize_options( $new_options );
+
+		update_option( self::OPTION_NAME, $options, false );
+
+		if ( $options['save_individually'] && $options['items'] ) {
+			update_user_meta( get_current_user_id(), self::USER_ITEMS_META_KEY, wp_slash( $options['items'] ) );
+		}
 	}
 
-	public function save_options( array $new_options ) {
-		$options = array_merge( self::DEFAULT_OPTIONS, $this->get_raw_options() );
+	public function sanitize_options( array $new_options ): array {
+		$options = array_merge( self::DEFAULT_OPTIONS, $this->get_db_options() );
 
 		if ( isset( $new_options['status'] ) ) {
 			$options['status'] = (bool) $new_options['status'];
@@ -70,11 +76,7 @@ class Settings {
 			$options['items'] = array_map( 'sanitize_text_field', $new_options['items'] );
 		}
 
-		update_option( self::OPTION_NAME, $options, false );
-
-		if ( isset( $options['save_individually'], $options['items'] ) ) {
-			update_user_meta( get_current_user_id(), self::USER_ITEMS_META_KEY, array_map( 'sanitize_text_field', $options['items'] ) );
-		}
+		return $options;
 	}
 
 	public function add_menu_item( string $id, string $text ) {
