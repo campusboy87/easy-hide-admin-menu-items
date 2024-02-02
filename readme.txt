@@ -47,10 +47,15 @@ A: After installing the plugin, a control manager will appear in the admin bar; 
 A: Yes, you can. We introduced an additional settings page that we will improve over time. Please send your suggestions to [support](mailto:support@example.com).
 
 == Screenshots ==
-1. Screen 1
-2. Screen 2
+1. Hide unnecessary main menus effortlessly with our plugin
+2. Activate child menu hiding
+3. Explore and customize your preferences with easy-to-use plugin settings
+4. Experience a user-friendly admin panel with our plugin's sleek design
 
 == Changelog ==
+
+= 1.4 =
+- UPD: Contact details of the participants.
 
 = 1.3 =
 - Added the ability to hide child menus.
