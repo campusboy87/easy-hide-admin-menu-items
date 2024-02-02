@@ -79,7 +79,7 @@ class Ajax {
 			);
 		}
 
-		$id = (int) sanitize_text_field( wp_unslash( $_POST['options']['id'] ?? 0 ) );
+		$id = sanitize_text_field( wp_unslash( $_POST['options']['id'] ?? '' ) );
 
 		if ( $id ) {
 			plugin()->settings->remove_menu_item( $id );
