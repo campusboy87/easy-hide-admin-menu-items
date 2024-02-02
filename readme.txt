@@ -1,5 +1,5 @@
 === Easy Hide Admin Menu Items ===
-Contributors: campusboy1987, alexodiy
+Contributors: campusboy1987, alexodiy, tkama
 Donate link: #
 Tags: admin menu, hide menu, customization menu
 Requires at least: 5.9.0

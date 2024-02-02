@@ -6,8 +6,7 @@
  * Domain Path: /languages
  * Description: The plugin allows hiding selected admin menu items.
  * Version: 1.3.4
- * Author: Campusboy, Dan Zakirov
- * Author URI: https://wp-plus.ru
+ * Author: Campusboy, Dan Zakirov, Tkama
  * License: GPL-2.0+
  * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
  * Requires PHP: 7.0
