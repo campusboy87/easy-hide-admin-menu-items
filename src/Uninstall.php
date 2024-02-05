@@ -17,6 +17,7 @@ class Uninstall {
 		if ( $this->settings->remove_all_data_on_uninstall ) {
 			$this->init_deletion_sites_options();
 			$this->init_deletion_users_options();
+			delete_option( 'ehami_data_install' );
 		}
 	}
 
@@ -43,12 +44,14 @@ class Uninstall {
 	private function delete_users_options( $blog_id ) {
 		$meta_key = $this->settings::USER_ITEMS_META_KEY;
 
-		$user_ids = get_users( [
-			'blog_id'      => $blog_id,
-			'fields'       => 'ID',
-			'meta_key'     => $meta_key, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+		$user_ids = get_users(
+			array(
+				'blog_id'  => $blog_id,
+				'fields'   => 'ID',
+				'meta_key' => $meta_key, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
 			'meta_compare' => 'EXISTS',
-		] );
+			)
+		);
 
 		foreach ( $user_ids as $user_id ) {
 			delete_user_meta( $user_id, $meta_key );
@@ -56,6 +59,6 @@ class Uninstall {
 	}
 
 	private function get_site_ids(): array {
-		return get_sites( [ 'fields' => 'ids' ] );
+		return get_sites( array( 'fields' => 'ids' ) );
 	}
 }
