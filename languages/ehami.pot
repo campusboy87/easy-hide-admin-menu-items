@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Easy Hide Admin Menu Items\n"
-"POT-Creation-Date: 2023-12-28 17:33+0300\n"
-"PO-Revision-Date: 2023-12-28 17:33+0300\n"
+"POT-Creation-Date: 2024-02-08 10:54+0300\n"
+"PO-Revision-Date: 2024-02-08 10:53+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,12 +21,42 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: src/Assets.php:22 templates/switcher.php:25
+#: src/Ajax.php:21 src/Ajax.php:38 src/Ajax.php:57 src/Ajax.php:77
+msgid "Sorry, you are not allowed to manage options for this site."
+msgstr ""
+
+#: src/Assets.php:28 templates/switcher.php:25
 msgid "No hidden menu items"
 msgstr ""
 
-#: src/Assets.php:23
+#: src/Assets.php:29
 msgid "Hide menu"
+msgstr ""
+
+#: src/Review.php:154
+msgid "Hello!"
+msgstr ""
+
+#. translators: %s is a placeholder for the plugin name
+#: src/Review.php:160
+#, php-format
+msgid "We are very pleased that you are using the %s plugin within a few days."
+msgstr ""
+
+#: src/Review.php:165
+msgid "Please rate plugin. It will help us a lot."
+msgstr ""
+
+#: src/Review.php:171
+msgid "Don't show again!"
+msgstr ""
+
+#: src/Review.php:179
+msgid "Remind me later"
+msgstr ""
+
+#: src/Review.php:187
+msgid "Leave feedback"
 msgstr ""
 
 #: src/Settings_Page.php:17 src/Settings_Page.php:18
@@ -87,21 +117,21 @@ msgstr ""
 msgid "Main Settings"
 msgstr ""
 
-#: templates/admin-page-options.php:83
+#: templates/admin-page-options.php:84
 msgid "Save Settings"
 msgstr ""
 
-#: templates/admin-page-options.php:93
+#: templates/admin-page-options.php:94
 msgid "Message From the Author"
 msgstr ""
 
-#: templates/admin-page-options.php:95
+#: templates/admin-page-options.php:96
 msgid ""
 "Thank you for using Easy Hide Admin Menu Items! Your feedback and comments "
 "are highly valuable to us and will assist us in improving the plugin further."
 msgstr ""
 
-#: templates/admin-page-options.php:96
+#: templates/admin-page-options.php:97
 msgid "For support, please contact our helpdesk."
 msgstr ""
 
@@ -126,9 +156,5 @@ msgid "The plugin allows hiding selected admin menu items."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Campusboy, Dan Zakirov"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://wp-plus.ru"
+msgid "Campusboy, Dan Zakirov, Tkama"
 msgstr ""
