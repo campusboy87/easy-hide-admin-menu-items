@@ -4,7 +4,7 @@ Donate link: #
 Tags: admin menu, hide menu, customization menu
 Requires at least: 5.9.0
 Tested up to: 6.4
-Stable tag: 1.3.4
+Stable tag: 1.3.5
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -54,16 +54,19 @@ A: Yes, you can. We introduced an additional settings page that we will improve 
 
 == Changelog ==
 
-= 1.4 =
+= 1.3.5 =
+- Add notice review.
+
+= 1.3.4 =
 - UPD: Contact details of the participants.
 
-= 1.3 =
+= 1.3.3 =
 - Added the ability to hide child menus.
 
-= 1.2 =
+= 1.3.2 =
 - Added support for WordPress 6.4.
 - Added settings page.
 
-= 1.1 =
+= 1.3.1 =
 - Fixed minor bugs related to menu item visibility.
 - Enhanced performance for larger WordPress installations.
