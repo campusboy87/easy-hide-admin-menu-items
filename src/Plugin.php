@@ -72,16 +72,14 @@ class Plugin {
 
 		$existing_values = get_option( 'ehami_data_install', array() );
 
-		if ( is_array( $existing_values ) ) {
-			return;
+		if ( ! is_array( $existing_values ) || empty( $existing_values ) ) {
+			$initial_values = array(
+				'date'   => gmdate( 'Y-m-d', strtotime( '+2 days' ) ),
+				'status' => 'activated',
+			);
+
+			// Update the option with initial values.
+			update_option( 'ehami_data_install', $initial_values );
 		}
-
-		$initial_values = array(
-			'date'   => gmdate( 'Y-m-d', strtotime( '+2 days' ) ),
-			'status' => 'activated',
-		);
-
-		// Update the option with initial values.
-		update_option( 'ehami_data_install', $initial_values );
 	}
 }
