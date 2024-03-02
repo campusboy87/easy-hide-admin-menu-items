@@ -7,7 +7,15 @@ use WP_Admin_Bar;
 class Switcher {
 
 	public function init() {
-		add_action( 'admin_bar_menu', [ $this, 'add_to_admin_bar' ] );
+
+        /**
+         * Check if the 'save_individually' option is set to true in the global settings.
+         * If the condition is met, or if the current user is an administrator, initialize the user interface.
+         */
+        if ( true === plugin()->settings->save_individually || current_user_can( 'administrator' ) ) {
+            add_action( 'admin_bar_menu', [ $this, 'add_to_admin_bar' ] );
+        }
+
 		add_filter( 'admin_body_class', [ $this, 'add_admin_body_class' ] );
 	}
 
