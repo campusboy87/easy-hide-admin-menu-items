@@ -22,14 +22,12 @@ $items = plugin()->settings->items;
 				);
 			}
 			?>
-
-			<div class="ehami-block-checkbox">
-				<input type="checkbox" id="hide-icons-checkbox" name="hide_icons_disable" <?php echo plugin()->settings->hide_icons_disable ? 'checked' : ''; ?>>
-				<label for="hide-icons-checkbox"><?php echo esc_attr__( 'Don\'t display hide icons', 'ehami' ); ?></label>
-			</div>
-
 		<?php } else {
 			printf( '<p class="no-items">%s</p>', esc_html__( 'No hidden menu items', 'ehami' ) );
 		} ?>
+		<div class="ehami-block-checkbox">
+			<input type="checkbox" id="hide-icons-checkbox" name="hide_icons_disable" <?php echo plugin()->settings->hide_icons_disable ? 'checked' : ''; ?>>
+			<label for="hide-icons-checkbox"><?php echo esc_attr__( 'Don\'t display hide icons', 'ehami' ); ?></label>
+		</div>
 	</div>
 </form>
