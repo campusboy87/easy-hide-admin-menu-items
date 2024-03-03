@@ -116,6 +116,10 @@
     white-space: nowrap;
 }
 
+#wp-admin-bar-ehami-switch .switch__content p.no-items {
+    margin: 0 0 15px 0;
+}
+
 #wp-admin-bar-ehami-switch .switch__content p:hover {
     color: #72aee6;
     cursor: pointer;
