@@ -93,8 +93,10 @@ $fields = [
 			<div id="ehami-author-info" class="stuffbox ehami-settings__author">
 				<h2 class="ehami-settings__author-title"><?php esc_html_e( 'Message From the Author', 'ehami' ); ?></h2>
 				<div class="inside ehami-settings__author-content">
-					<p><?php esc_html_e( 'Thank you for using Easy Hide Admin Menu Items! Your feedback and comments are highly valuable to us and will assist us in improving the plugin further.', 'ehami' ); ?></p>
-					<p><?php esc_html_e( 'For support, please contact our helpdesk.', 'ehami' ); ?></p>
+
+					<p>
+						<?php esc_html_e( 'Thank you for using Easy Hide Admin Menu Items! Your feedback and comments are highly valuable to us and will assist us in improving the plugin further.', 'ehami' ); ?>
+					</p>
 					<p>
 						<span class="dashicons dashicons-star-filled"></span>
 						<span class="dashicons dashicons-star-filled"></span>
@@ -102,6 +104,26 @@ $fields = [
 						<span class="dashicons dashicons-star-filled"></span>
 						<span class="dashicons dashicons-star-filled"></span>
 					</p>
+					<p>
+						<?php esc_html_e( 'For support, please contact our helpdesk. If you encounter any issues or have any questions, feel free to', 'ehami' ); ?>
+						<a href="https://wordpress.org/support/plugin/easy-hide-admin-menu-items/" target="_blank"> <?php esc_html_e( 'contact us here', 'ehami' ); ?></a>.
+					</p>
+
+					<p>
+						<span class="dashicons dashicons-star-filled"></span>
+						<span class="dashicons dashicons-star-filled"></span>
+						<span class="dashicons dashicons-star-filled"></span>
+						<span class="dashicons dashicons-star-filled"></span>
+						<span class="dashicons dashicons-star-filled"></span>
+					</p>
+
+					<p>
+					<?php esc_html_e( 'Please consider leaving a review for our plugin. Your reviews help us improve and serve you better.', 'ehami' ); ?>
+						<a href="https://wordpress.org/support/plugin/easy-hide-admin-menu-items/reviews/#new-post" target="_blank">
+							<?php esc_html_e( 'Leave a review', 'ehami' ); ?>
+						</a>.
+					</p>
+
 				</div>
 			</div>
 		</div>
