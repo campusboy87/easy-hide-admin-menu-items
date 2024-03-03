@@ -39,7 +39,7 @@
 
     // Restore the visibility of a hidden menu item.
     $barHami.on('click', '.ehami-restore-li', function () {
-        console.log('$barHami');
+
         var $el = $(this).closest('p');
         var id = $el.data('id');
 
