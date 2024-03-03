@@ -51,13 +51,13 @@ class Settings {
 
 		update_option( self::OPTION_NAME, $options, false );
 
-        if ($options['save_individually']) {
+        if ( $options['save_individually'] && array_key_exists('hide_icons_disable', $options) ) {
             update_user_meta(get_current_user_id(), 'hide_icons_disable', $options['hide_icons_disable']);
         }
 
-		if ( $options['save_individually'] && $options['items'] ) {
-			update_user_meta( get_current_user_id(), self::USER_ITEMS_META_KEY, wp_slash( $options['items'] ) );
-		}
+        if ( $options['save_individually'] && array_key_exists('items', $options) ) {
+            update_user_meta( get_current_user_id(), self::USER_ITEMS_META_KEY, wp_slash( $options['items'] ) );
+        }
 
 	}
 
@@ -100,7 +100,7 @@ class Settings {
 	public function remove_menu_item( string $id ) {
 		$items = $this->items;
 
-		unset( $items[ $id ] );
+        unset( $items[ $id ] );
 
 		$this->save_options( [
 			'items' => $items,
