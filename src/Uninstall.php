@@ -45,12 +45,12 @@ class Uninstall {
 		$meta_key = $this->settings::USER_ITEMS_META_KEY;
 
 		$user_ids = get_users(
-			array(
-				'blog_id'  => $blog_id,
-				'fields'   => 'ID',
-				'meta_key' => $meta_key, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
-			'meta_compare' => 'EXISTS',
-			)
+			[
+				'blog_id'      => $blog_id,
+				'fields'       => 'ID',
+				'meta_key'     => $meta_key, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+				'meta_compare' => 'EXISTS',
+			]
 		);
 
 		foreach ( $user_ids as $user_id ) {
@@ -59,6 +59,6 @@ class Uninstall {
 	}
 
 	private function get_site_ids(): array {
-		return get_sites( array( 'fields' => 'ids' ) );
+		return get_sites( [ 'fields' => 'ids' ] );
 	}
 }

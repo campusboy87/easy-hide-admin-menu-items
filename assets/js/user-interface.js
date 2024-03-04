@@ -225,7 +225,7 @@
     /**
      * Handle click events for dynamic elements inside .switch__content
      */
-    $(document).on("click", ".switch__content p[data-id]", function(event) {
+    $(document).on("click", ".switch__content p[data-id]", function (event) {
 
         event.preventDefault();
 
@@ -275,7 +275,7 @@
 
     toggleEhamiHideIcons()
 
-    $('#hide-icons-checkbox').change(function() {
+    $('#hide-icons-checkbox').change(function () {
         toggleEhamiHideIcons();
     });
 

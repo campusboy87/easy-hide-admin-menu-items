@@ -12,24 +12,24 @@ class Assets {
 		wp_enqueue_style( 'ehami-style', plugin()->url . '/assets/css/style.css', [], plugin()->info['version'] );
 		$this->add_inline_style( 'ehami-style' );
 
-        /**
-         * Load the user interface script only if the 'save_individually' option is set to true in the global settings,
-         * or if the current user is an administrator.
-         */
-         if ( true === plugin()->settings->save_individually || current_user_can( 'administrator' ) ) {
+		/**
+		 * Load the user interface script only if the 'save_individually' option is set to true in the global settings,
+		 * or if the current user is an administrator.
+		 */
+		if ( true === plugin()->settings->save_individually || current_user_can( 'administrator' ) ) {
 
-            wp_enqueue_script(
-                'ehami-user-interface',
-                plugin()->url . '/assets/js/user-interface.js',
-                [
-                    'jquery',
-                    'jquery-effects-transfer',
-                ],
-                plugin()->info['version'],
-                true
-            );
+			wp_enqueue_script(
+				'ehami-user-interface',
+				plugin()->url . '/assets/js/user-interface.js',
+				[
+					'jquery',
+					'jquery-effects-transfer',
+				],
+				plugin()->info['version'],
+				true
+			);
 
-        }
+		}
 
 		wp_enqueue_script( 'ehami-settings-page', plugin()->url . '/assets/js/settings-page.js', [ 'jquery' ], plugin()->info['version'], true );
 		$data = [

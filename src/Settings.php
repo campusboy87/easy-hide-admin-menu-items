@@ -4,11 +4,11 @@ namespace EHAMI;
 
 /**
  * @property-read array $items
- * @property-read bool  $status
- * @property-read bool  $save_individually
- * @property-read bool  $hide_submenu
- * @property-read bool  $remove_all_data_on_uninstall
- * @property-read bool  $hide_icons_disable
+ * @property-read bool $status
+ * @property-read bool $save_individually
+ * @property-read bool $hide_submenu
+ * @property-read bool $remove_all_data_on_uninstall
+ * @property-read bool $hide_icons_disable
  */
 class Settings {
 
@@ -21,7 +21,7 @@ class Settings {
 		'save_individually'            => false,
 		'hide_submenu'                 => false,
 		'remove_all_data_on_uninstall' => false,
-        'hide_icons_disable'           => false,
+		'hide_icons_disable'           => false,
 	];
 
 	/**
@@ -37,9 +37,9 @@ class Settings {
 		$this->options = array_merge( self::DEFAULT_OPTIONS, $this->get_db_options() );
 
 		if ( $this->options['save_individually'] ) {
-			$this->options['items'] = get_user_meta( get_current_user_id(), self::USER_ITEMS_META_KEY, true ) ?: [];
-            $this->options['hide_icons_disable'] = get_user_meta(get_current_user_id(), 'hide_icons_disable', true) ?: false;
-        }
+			$this->options['items']              = get_user_meta( get_current_user_id(), self::USER_ITEMS_META_KEY, true ) ?: [];
+			$this->options['hide_icons_disable'] = get_user_meta( get_current_user_id(), 'hide_icons_disable', true ) ?: false;
+		}
 	}
 
 	public function get_db_options(): array {
@@ -51,13 +51,13 @@ class Settings {
 
 		update_option( self::OPTION_NAME, $options, false );
 
-        if ( $options['save_individually'] && array_key_exists('hide_icons_disable', $options) ) {
-            update_user_meta(get_current_user_id(), 'hide_icons_disable', $options['hide_icons_disable']);
-        }
+		if ( $options['save_individually'] && array_key_exists( 'hide_icons_disable', $options ) ) {
+			update_user_meta( get_current_user_id(), 'hide_icons_disable', $options['hide_icons_disable'] );
+		}
 
-        if ( $options['save_individually'] && array_key_exists('items', $options) ) {
-            update_user_meta( get_current_user_id(), self::USER_ITEMS_META_KEY, wp_slash( $options['items'] ) );
-        }
+		if ( $options['save_individually'] && array_key_exists( 'items', $options ) ) {
+			update_user_meta( get_current_user_id(), self::USER_ITEMS_META_KEY, wp_slash( $options['items'] ) );
+		}
 
 	}
 
@@ -80,9 +80,9 @@ class Settings {
 			$options['remove_all_data_on_uninstall'] = (bool) $new_options['remove_all_data_on_uninstall'];
 		}
 
-        if (isset($new_options['hide_icons_disable'])) {
-            $options['hide_icons_disable'] = (bool) $new_options['hide_icons_disable'];
-        }
+		if ( isset( $new_options['hide_icons_disable'] ) ) {
+			$options['hide_icons_disable'] = (bool) $new_options['hide_icons_disable'];
+		}
 
 		if ( isset( $new_options['items'] ) && is_array( $new_options['items'] ) ) {
 			$options['items'] = array_map( 'sanitize_text_field', $new_options['items'] );
@@ -100,7 +100,7 @@ class Settings {
 	public function remove_menu_item( string $id ) {
 		$items = $this->items;
 
-        unset( $items[ $id ] );
+		unset( $items[ $id ] );
 
 		$this->save_options( [
 			'items' => $items,
