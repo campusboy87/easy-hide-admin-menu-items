@@ -261,21 +261,25 @@
     /**
      * Toggle the visibility of elements based on the checkbox state and save the option via AJAX.
      */
-    function toggleEhamiHideIcons() {
-        var isChecked = $('#hide-icons-checkbox').is(':checked');
+    (function () {
+        const $checkbox = $('#hide-icons-checkbox');
 
-        if (isChecked) {
-            $('.ehami-remove-li, .ehami-remove-sub-li').hide();
-        } else {
-            $('.ehami-remove-li, .ehami-remove-sub-li').show();
+        function toggleEhamiHideIcons() {
+            var isChecked = $checkbox.is(':checked');
+
+            if (isChecked) {
+                $('.ehami-remove-li, .ehami-remove-sub-li').hide();
+            } else {
+                $('.ehami-remove-li, .ehami-remove-sub-li').show();
+            }
         }
-    }
 
-    $('#hide-icons-checkbox').change(function () {
+        $checkbox.change(function () {
+            toggleEhamiHideIcons();
+            save_options('hide_icons_disable', {'hide_icons_disable': +$(this).is(':checked')});
+        });
+
         toggleEhamiHideIcons();
-        save_options('hide_icons_disable', {'hide_icons_disable': $(this).is(':checked')});
-    });
-
-    toggleEhamiHideIcons();
+    }());
 
 })(jQuery);
