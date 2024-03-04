@@ -22,10 +22,10 @@ $hide_icons_disable = plugin()->settings->hide_icons_disable;
 					esc_attr__( 'Remove from the list', 'ehami' )
 				);
 			}
-			?>
-		<?php } else {
+		} else {
 			printf( '<p class="no-items">%s</p>', esc_html__( 'No hidden menu items', 'ehami' ) );
-		} ?>
+		}
+		?>
 
 		<div class="ehami-block-checkbox">
 			<input type="checkbox"

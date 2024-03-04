@@ -2,8 +2,6 @@
 
 namespace EHAMI;
 
-use JetBrains\PhpStorm\NoReturn;
-
 class Ajax {
 
 	const NONCE_KEY = 'ehami-nonce';
