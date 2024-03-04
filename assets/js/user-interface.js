@@ -269,15 +269,13 @@
         } else {
             $('.ehami-remove-li, .ehami-remove-sub-li').show();
         }
-
-        save_options('hide_icons_disable', {'hide_icons_disable': isChecked});
     }
-
-    toggleEhamiHideIcons()
 
     $('#hide-icons-checkbox').change(function () {
         toggleEhamiHideIcons();
+        save_options('hide_icons_disable', {'hide_icons_disable': $(this).is(':checked')});
     });
 
+    toggleEhamiHideIcons();
 
 })(jQuery);

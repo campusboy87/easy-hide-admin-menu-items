@@ -101,7 +101,7 @@ class Ajax {
 		}
 
 		plugin()->settings->save_options( [
-			'hide_icons_disable' => isset( $_POST['options']['hide_icons_disable'] ) && $_POST['options']['hide_icons_disable'] === 'true',
+			'hide_icons_disable' => (bool) sanitize_text_field( wp_unslash( $_POST['options']['hide_icons_disable'] ?? false ) )
 		] );
 
 		wp_die();
