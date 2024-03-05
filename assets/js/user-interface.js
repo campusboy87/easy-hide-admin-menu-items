@@ -39,7 +39,7 @@
 
     // Restore the visibility of a hidden menu item.
     $barHami.on('click', '.ehami-restore-li', function () {
-        console.log('$barHami');
+
         var $el = $(this).closest('p');
         var id = $el.data('id');
 
@@ -162,7 +162,7 @@
 
         $template = $(item).css('display', 'none').show(300);
 
-        $('.switch__content', $barHami).append($template);
+        $('.switch__content', $barHami).prepend($template);
 
         setTimeout(function () {
             $li.effect("transfer", {to: $('[data-id="' + id + '"]', $barHami)}, 500).hide(200);
@@ -189,7 +189,7 @@
 
         if (plugin.count_items === 0) {
             $btnSwitch.prop('checked', false);
-            $('.switch__content', $barHami).append(noItems);
+            $('.switch__content', $barHami).prepend(noItems);
         } else {
             $('.no-items', $barHami).remove();
         }
@@ -221,5 +221,65 @@
                 $(this).removeAttr('style');
             });
         });
+
+    /**
+     * Handle click events for dynamic elements inside .switch__content
+     */
+    $(document).on("click", ".switch__content p[data-id]", function (event) {
+
+        event.preventDefault();
+
+        // Check if the click was on the .ehami-restore-li element
+        if ($(event.target).hasClass('ehami-restore-li')) {
+            return;
+        }
+
+        var dataId = $(this).data("id");
+
+        // Check if data-id contains '#'
+        if (dataId.includes("#")) {
+            var targetId = dataId;
+            var $targetElement = $(targetId);
+            console.log($targetElement);
+            if ($targetElement.length) {
+                // Find the first anchor tag inside the target element
+                var $link = $targetElement.find("a");
+                if ($link.length) {
+                    $link.get(0).click();
+                } else {
+                    console.log("No link found inside the target element.");
+                }
+            } else {
+                console.log("Target element with id " + targetId + " not found.");
+            }
+        } else {
+            // No '#' in data-id, assuming it's a URL
+            window.location.href = dataId;
+        }
+    });
+
+    /**
+     * Toggle the visibility of elements based on the checkbox state and save the option via AJAX.
+     */
+    (function () {
+        const $checkbox = $('#hide-icons-checkbox');
+
+        function toggleEhamiHideIcons() {
+            var isChecked = $checkbox.is(':checked');
+
+            if (isChecked) {
+                $('.ehami-remove-li, .ehami-remove-sub-li').hide();
+            } else {
+                $('.ehami-remove-li, .ehami-remove-sub-li').show();
+            }
+        }
+
+        $checkbox.change(function () {
+            toggleEhamiHideIcons();
+            save_options('hide_icons_disable', {'hide_icons_disable': +$(this).is(':checked')});
+        });
+
+        toggleEhamiHideIcons();
+    }());
 
 })(jQuery);

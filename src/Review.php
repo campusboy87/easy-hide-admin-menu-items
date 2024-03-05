@@ -17,19 +17,19 @@ class Review {
 	 */
 	public function init() {
 
-		$ehami_data_install = get_option( 'ehami_data_install', array() );
+		$ehami_data_install = get_option( 'ehami_data_install', [] );
 
 		// Check if the condition is met before adding hooks.
 		if ( is_array( $ehami_data_install ) && strtotime( gmdate( 'Y-m-d' ) ) >= strtotime( $ehami_data_install['date'] ) ) {
-			add_action( 'admin_head', array( $this, 'add_admin_inline_style' ) );
-			add_action( 'admin_footer', array( $this, 'add_admin_footer_script' ) );
-			add_action( 'admin_notices', array( $this, 'admin_notice' ) );
+			add_action( 'admin_head', [ $this, 'add_admin_inline_style' ] );
+			add_action( 'admin_footer', [ $this, 'add_admin_footer_script' ] );
+			add_action( 'admin_notices', [ $this, 'admin_notice' ] );
 		}
 
 		// Add Ajax actions.
-		add_action( 'wp_ajax_leave_feedback', array( $this, 'leave_feedback_ajax_callback' ) );
-		add_action( 'wp_ajax_remind', array( $this, 'remind_ajax_callback' ) );
-		add_action( 'wp_ajax_already', array( $this, 'already_ajax_callback' ) );
+		add_action( 'wp_ajax_leave_feedback', [ $this, 'leave_feedback_ajax_callback' ] );
+		add_action( 'wp_ajax_remind', [ $this, 'remind_ajax_callback' ] );
+		add_action( 'wp_ajax_already', [ $this, 'already_ajax_callback' ] );
 	}
 
 	/**
@@ -83,7 +83,7 @@ class Review {
 					};
 
 					$.post(ajaxurl, data, function (response) {
-						$( "#ehami_review .notice-dismiss" ).trigger( "click" );
+						$("#ehami_review .notice-dismiss").trigger("click");
 					});
 				};
 
@@ -96,7 +96,7 @@ class Review {
 					};
 
 					$.post(ajaxurl, data, function (response) {
-						$( "#ehami_review .notice-dismiss" ).trigger( "click" );
+						$("#ehami_review .notice-dismiss").trigger("click");
 					});
 				};
 
@@ -109,7 +109,7 @@ class Review {
 					};
 
 					$.post(ajaxurl, data, function (response) {
-						$( "#ehami_review .notice-dismiss" ).trigger( "click" );
+						$("#ehami_review .notice-dismiss").trigger("click");
 					});
 				};
 
@@ -145,7 +145,8 @@ class Review {
 
 				<div>
 
-					<img class="ehami_review__img" src="https://ps.w.org/easy-hide-admin-menu-items/assets/icon-128x128.png" alt="">
+					<img class="ehami_review__img"
+					     src="https://ps.w.org/easy-hide-admin-menu-items/assets/icon-128x128.png" alt="">
 
 				</div>
 
@@ -182,7 +183,9 @@ class Review {
 
 						</a>
 
-						<a id="ehami_leave_feedback" class="button button-primary ehami_review__link" href="https://wordpress.org/support/plugin/easy-hide-admin-menu-items/reviews/#new-post" target="_blank">
+						<a id="ehami_leave_feedback" class="button button-primary ehami_review__link"
+						   href="https://wordpress.org/support/plugin/easy-hide-admin-menu-items/reviews/#new-post"
+						   target="_blank">
 
 							<?php echo esc_html__( 'Leave feedback', 'ehami' ); ?>
 
@@ -204,15 +207,15 @@ class Review {
 	/**
 	 * Ajax callback for various actions.
 	 *
-	 * @param string $status         The status to be updated.
-	 * @param string $date_modifier  The date modifier for updating the date.
+	 * @param string $status The status to be updated.
+	 * @param string $date_modifier The date modifier for updating the date.
 	 */
 	private function review_ajax_callback( string $status, string $date_modifier ) {
 
 		check_ajax_referer( 'ehami_nonce_review', 'nonce' );
 
 		// Get the current option value.
-		$ehami_data_install = get_option( 'ehami_data_install', array() );
+		$ehami_data_install = get_option( 'ehami_data_install', [] );
 
 		// Update the values.
 		$ehami_data_install['date']   = gmdate( 'Y-m-d', strtotime( $date_modifier ) );

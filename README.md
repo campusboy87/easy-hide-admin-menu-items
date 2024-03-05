@@ -70,6 +70,31 @@ Now the plugin is ready for use, and you can enjoy improved menu manageability i
 
 ## Changelog
 
+**1.3.6:**
+- Links in the hidden menu bar are now clickable.
+- Added a setting to disable hiding icons.
+- Updated project description.
+- Performed testing for inaccuracies in the plugin.
+- FIX: Corrected interface display issue for editors.
+- FIX: Resolved saving error in user_meta for the last menu item.
+
+**1.3.5:**
+- Add notice review.
+
+**1.3.4:**
+- UPD: Contact details of the participants.
+
+**1.3.3:**
+- Added the ability to hide child menus.
+
+**1.3.2:**
+- Added support for WordPress 6.4.
+- Added settings page.
+
+**1.3.1:**
+- Fixed minor bugs related to menu item visibility.
+- Enhanced performance for larger WordPress installations.
+
 **1.3:**
 - Added a new option to hide submenus.
 

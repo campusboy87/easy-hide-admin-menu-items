@@ -35,13 +35,13 @@ class Plugin {
 		$this->basename = plugin_basename( $main_file_path );
 		$this->info     = get_file_data(
 			$main_file_path,
-			array(
+			[
 				'name'    => 'Plugin Name',
 				'version' => 'Version',
-			)
+			]
 		);
 
-		register_activation_hook( $main_file_path, array( $this, 'plugin_activate' ) );
+		register_activation_hook( $main_file_path, [ $this, 'plugin_activate' ] );
 	}
 
 	public function init() {
@@ -70,13 +70,13 @@ class Plugin {
 	 */
 	public function plugin_activate() {
 
-		$existing_values = get_option( 'ehami_data_install', array() );
+		$existing_values = get_option( 'ehami_data_install', [] );
 
 		if ( ! is_array( $existing_values ) || empty( $existing_values ) ) {
-			$initial_values = array(
+			$initial_values = [
 				'date'   => gmdate( 'Y-m-d', strtotime( '+2 days' ) ),
 				'status' => 'activated',
-			);
+			];
 
 			// Update the option with initial values.
 			update_option( 'ehami_data_install', $initial_values );

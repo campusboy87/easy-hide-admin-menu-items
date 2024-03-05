@@ -4,7 +4,7 @@ Donate link: #
 Tags: admin menu, hide menu, customization menu
 Requires at least: 5.9.0
 Tested up to: 6.4
-Stable tag: 1.3.5
+Stable tag: 1.3.6
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -17,34 +17,50 @@ Easy Hide Admin Menu Items is a plugin designed for the convenience of using the
 
 On some websites with numerous plugins and extensions, the admin panel can become confusing due to an excess of menus. Easy Hide Admin Menu Items allows you to easily hide the items you don't need, providing cleanliness and convenience in usage.
 
+== Plugin Settings ==
+
+In our plugin, you can locate the settings within the following menu:
+
+**Appearance → Admin Menu Settings**
+
+Within this menu, you'll find the settings for our plugin.
+
 == Additional Description ==
 
 Easy Hide Admin Menu Items offers a seamless solution for customizing your WordPress admin panel to suit your preferences. With the settings conveniently located under Appearance → Admin Menu Settings, you have the power to tailor your admin experience effortlessly.
 Key Features:
 
-1. Centralized Settings: Access all configuration options in one place under Appearance → Admin Menu Settings, streamlining the customization process.
-
-2. Child Menu Hiding: Enable the option to hide child menus, providing a cleaner and more focused navigation experience.
-
-3. Instant Menu Concealment: Upon activation, the plugin allows you to immediately hide menus, ensuring instant application of your customization choices.
-
-4. Global or User-Specific Settings: Choose between global settings for all users or empower each user to personalize their admin menu visibility. This flexibility ensures that Easy Hide Admin Menu Items adapts to various workflow preferences.
+* **Instant Menu Concealment:** Upon activation, the plugin allows you to immediately hide menus, ensuring instant application of your customization choices.
+* **Child Menu Hiding:** Enable the option to hide child menus, providing a cleaner and more focused navigation experience.
+* **Global or User-Specific Settings:** Choose between global settings for all users or empower each user to personalize their admin menu visibility.
+* **Global Settings:** Changes apply to everyone. If the admin hides a menu, it's hidden for all users.
+* **User-Specific Settings:** Each user can customize their menu visibility individually.
 
 Enhance your WordPress admin panel experience by effortlessly managing menu items and optimizing the interface according to your specific needs. Experience a clutter-free and user-friendly environment with Easy Hide Admin Menu Items.
 
 == Installation ==
 
-1. Download the plugin archive and extract it.
-2. Upload the `ehami` folder to the `wp-content/plugins/` directory on your server.
-3. Activate the plugin through the "Plugins" section in the WordPress admin panel.
+You can install this plugin in two ways:
 
-== Frequently Asked Questions ==
+1. **Installation via Uploader:**
+   - Download the plugin archive and extract it.
+   - Upload the `easy-hide-admin-menu-items` folder to the `wp-content/plugins/` directory on your server.
+   - Activate the plugin through the "Plugins" section in the WordPress admin panel.
+
+2. **Installation from Repository:**
+   - Log in to your WordPress admin panel.
+   - Go to the "Plugins" section and select "Add New".
+   - Enter the **`EHAMI`** key for simplified searching in the search bar.
+   - Click the "Install" button next to the "Easy Hide Admin Menu Items" plugin.
+   - After the installation is complete, activate the plugin.
+
+### Frequently Asked Questions
 
 **Q: How to hide a menu?**
 A: After installing the plugin, a control manager will appear in the admin bar; you can disable the menu at any time.
 
 **Q: Can I make the menu hide for each user?**
-A: Yes, you can. We introduced an additional settings page that we will improve over time. Please send your suggestions to [support](mailto:support@example.com).
+A: Yes, you can. We introduced an additional settings page that we will improve over time. Please send your suggestions to [support](https://wordpress.org/support/plugin/easy-hide-admin-menu-items/).
 
 == Screenshots ==
 1. Hide unnecessary main menus effortlessly with our plugin
@@ -53,6 +69,14 @@ A: Yes, you can. We introduced an additional settings page that we will improve 
 4. Experience a user-friendly admin panel with our plugin's sleek design
 
 == Changelog ==
+
+= 1.3.6 =
+- Links in the hidden menu bar are now clickable.
+- Added a setting to disable hiding icons.
+- Updated project description.
+- Performed testing for inaccuracies in the plugin.
+- FIX: Corrected interface display issue for editors.
+- FIX: Resolved saving error in user_meta for the last menu item.
 
 = 1.3.5 =
 - Add notice review.

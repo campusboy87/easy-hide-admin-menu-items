@@ -11,9 +11,11 @@ class Ajax {
 		add_action( 'wp_ajax_ehami_save_settings', [ $this, 'action_save_settings_to_db' ] );
 		add_action( 'wp_ajax_ehami_add_item', [ $this, 'action_add_item_to_db' ] );
 		add_action( 'wp_ajax_ehami_remove_item', [ $this, 'action_remove_item_from_db' ] );
+		add_action( 'wp_ajax_ehami_hide_icons_disable', [ $this, 'action_hide_icons_disable' ] );
 	}
 
 	public function action_save_status_to_db() {
+
 		check_ajax_referer( self::NONCE_KEY );
 
 		if ( ! current_user_can( 'read' ) ) {
@@ -84,6 +86,23 @@ class Ajax {
 		if ( $id ) {
 			plugin()->settings->remove_menu_item( $id );
 		}
+
+		wp_die();
+	}
+
+	public function action_hide_icons_disable() {
+		check_ajax_referer( self::NONCE_KEY );
+
+		if ( ! current_user_can( 'read' ) ) {
+			wp_die(
+				esc_html__( 'Sorry, you are not allowed to manage options for this site.' ),
+				403
+			);
+		}
+
+		plugin()->settings->save_options( [
+			'hide_icons_disable' => (bool) sanitize_text_field( wp_unslash( $_POST['options']['hide_icons_disable'] ?? false ) )
+		] );
 
 		wp_die();
 	}
