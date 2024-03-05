@@ -30,10 +30,9 @@ Within this menu, you'll find the settings for our plugin.
 Easy Hide Admin Menu Items offers a seamless solution for customizing your WordPress admin panel to suit your preferences. With the settings conveniently located under Appearance → Admin Menu Settings, you have the power to tailor your admin experience effortlessly.
 Key Features:
 
-1. **Instant Menu Concealment:** Upon activation, the plugin allows you to immediately hide menus, ensuring instant application of your customization choices.
-2. **Child Menu Hiding:** Enable the option to hide child menus, providing a cleaner and more focused navigation experience.
-3. **Global or User-Specific Settings:** Choose between global settings for all users or empower each user to personalize their admin menu visibility.
-
+* **Instant Menu Concealment:** Upon activation, the plugin allows you to immediately hide menus, ensuring instant application of your customization choices.
+* **Child Menu Hiding:** Enable the option to hide child menus, providing a cleaner and more focused navigation experience.
+* **Global or User-Specific Settings:** Choose between global settings for all users or empower each user to personalize their admin menu visibility.
 * **Global Settings:** Changes apply to everyone. If the admin hides a menu, it's hidden for all users.
 * **User-Specific Settings:** Each user can customize their menu visibility individually.
 
