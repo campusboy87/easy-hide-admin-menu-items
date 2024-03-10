@@ -1,10 +1,10 @@
 === Easy Hide Admin Menu Items ===
 Contributors: campusboy1987, alexodiy, tkama
 Donate link: #
-Tags: admin menu, hide menu, customization menu
+Tags: admin menu, hide menu, dashboard, customization menu
 Requires at least: 5.9.0
-Tested up to: 6.4
-Stable tag: 1.3.6
+Tested up to: 6.5
+Stable tag: 1.3.7
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -38,6 +38,23 @@ Key Features:
 
 Enhance your WordPress admin panel experience by effortlessly managing menu items and optimizing the interface according to your specific needs. Experience a clutter-free and user-friendly environment with Easy Hide Admin Menu Items.
 
+== Frequently Asked Questions ==
+
+= How to hide a menu? =
+After installing the plugin, a control manager will appear in the admin bar; you can disable the menu at any time.
+
+= Can I make the menu hide for each user? =
+Yes, you can. We introduced an additional settings page that we will improve over time. Please send your suggestions to [support](https://wordpress.org/support/plugin/easy-hide-admin-menu-items/).
+
+= What advantages does using global settings offer compared to individual ones? =
+You can quickly configure the admin panel for all users at once with just one click. Individual settings for the menu allow each user to customize their admin panel.
+
+= Is there a way to quickly revert hidden menus to their original state? =
+Yes, there is. A toggle switch is provided in the top admin bar for this purpose.
+
+= Can interaction with hidden menus be done from the top bar? =
+Yes, it can. Firstly, you can navigate to any link from the hidden menu directly from the hidden menu bar. Secondly, you can always delete a hidden menu. Thirdly, once all settings are configured in your admin panel, you can disable the display of hide icons for comfortable admin panel usage.
+
 == Installation ==
 
 You can install this plugin in two ways:
@@ -54,21 +71,18 @@ You can install this plugin in two ways:
    - Click the "Install" button next to the "Easy Hide Admin Menu Items" plugin.
    - After the installation is complete, activate the plugin.
 
-### Frequently Asked Questions
-
-**Q: How to hide a menu?**
-A: After installing the plugin, a control manager will appear in the admin bar; you can disable the menu at any time.
-
-**Q: Can I make the menu hide for each user?**
-A: Yes, you can. We introduced an additional settings page that we will improve over time. Please send your suggestions to [support](https://wordpress.org/support/plugin/easy-hide-admin-menu-items/).
-
 == Screenshots ==
+
 1. Hide unnecessary main menus effortlessly with our plugin
 2. Activate child menu hiding
 3. Explore and customize your preferences with easy-to-use plugin settings
 4. Experience a user-friendly admin panel with our plugin's sleek design
 
 == Changelog ==
+
+= 1.3.7 =
+- Tested with WordPress 6.5.
+- Tested with PHP 8.3.
 
 = 1.3.6 =
 - Links in the hidden menu bar are now clickable.
