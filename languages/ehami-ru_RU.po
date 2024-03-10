@@ -1,0 +1,162 @@
+# Translation of Plugins - Easy Hide Admin Menu Items - Stable (latest release) in Russian
+# This file is distributed under the same license as the Plugins - Easy Hide Admin Menu Items - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2024-03-06 19:20:09+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: GlotPress/4.0.0-rc.1\n"
+"Language: ru\n"
+"Project-Id-Version: Plugins - Easy Hide Admin Menu Items - Stable (latest release)\n"
+
+#: templates/switcher.php:36
+msgid "Don't display hide icons"
+msgstr "Отключить иконки скрытия"
+
+#: templates/admin-page-options.php:123
+msgid "Leave a review"
+msgstr "Оставить отзыв"
+
+#: templates/admin-page-options.php:121
+msgid "Please consider leaving a review for our plugin. Your reviews help us improve and serve you better."
+msgstr "Пожалуйста, рассмотрите возможность оставить отзыв о нашем плагине. Ваша обратная связь мотивирует нас качественно улучшать сервис."
+
+#: templates/admin-page-options.php:109
+msgid "contact us here"
+msgstr "обращаться к нам"
+
+#: templates/admin-page-options.php:108
+msgid "For support, please contact our helpdesk. If you encounter any issues or have any questions, feel free to"
+msgstr "Для получения поддержки, пожалуйста, обратитесь на форум. Если у вас возникнут проблемы или вопросы, не стесняйтесь"
+
+#: src/Review.php:190
+msgid "Leave feedback"
+msgstr "Оставить отзыв"
+
+#: src/Review.php:180
+msgid "Remind me later"
+msgstr "Напомни мне позже"
+
+#: src/Review.php:172
+msgid "Don't show again!"
+msgstr "Больше не показывать!"
+
+#: src/Review.php:166
+msgid "Please rate plugin. It will help us a lot."
+msgstr "Пожалуйста, оцените плагин. Это нам очень поможет."
+
+#. translators: %s is a placeholder for the plugin name
+#: src/Review.php:161
+msgid "We are very pleased that you are using the %s plugin within a few days."
+msgstr "Мы очень рады, что вы используете плагин %s уже несколько дней."
+
+#: src/Review.php:155
+msgid "Hello!"
+msgstr "Здравствуйте!"
+
+#. Author of the plugin
+#: ehami.php
+msgid "Campusboy, Dan Zakirov, Tkama"
+msgstr "Campusboy, Dan Zakirov, Tkama"
+
+#: templates/switcher.php:22
+msgid "Remove from the list"
+msgstr "Удалить из списка"
+
+#: templates/switcher.php:10
+msgid "Hide or show selected menu items"
+msgstr "Скрыть или показать скрытые пункты меню"
+
+#: templates/admin-page-options.php:98
+msgid "Thank you for using Easy Hide Admin Menu Items! Your feedback and comments are highly valuable to us and will assist us in improving the plugin further."
+msgstr "Благодарим вас за использование плагина Easy Hide Admin Menu Items! Ваши отзывы и комментарии имеют для нас большую ценность и помогут нам дальше улучшать плагин."
+
+#: templates/admin-page-options.php:94
+msgid "Message From the Author"
+msgstr "Сообщение от авторов"
+
+#: templates/admin-page-options.php:84
+msgid "Save Settings"
+msgstr "Сохранить настройки"
+
+#: templates/admin-page-options.php:44
+msgid "Main Settings"
+msgstr "Основные настройки"
+
+#: templates/admin-page-options.php:35
+msgid "Easy Hide Admin Menu Items Settings"
+msgstr "Настройки Easy Hide Admin Menu Items"
+
+#: templates/admin-page-options.php:28
+msgid "If checked, all data (option and user metadata) will be deleted when the plugin is deleted."
+msgstr "Если отмечено, то все данные (опции и метаданные пользователей) будут удалены из базы данных при удалении плагина."
+
+#: templates/admin-page-options.php:27
+msgid "Allow the deletion of all plugin data after it is deleted"
+msgstr "Разрешить удаление всех данных после удаления плагина"
+
+#: templates/admin-page-options.php:23
+msgid "Uninstall plugin"
+msgstr "Удаление плагина"
+
+#: templates/admin-page-options.php:20
+msgid "If checked, you can hide the child menu. This may be useful when there are too many child menus causing distraction."
+msgstr "Если отмечено, вы можете скрывать дочерние меню. Это может быть полезно, когда слишком много дочерних меню которыми вы не пользуетесь."
+
+#: templates/admin-page-options.php:19
+msgid "Allow hiding child admin menus"
+msgstr "Разрешить скрытие дочерних меню администратора"
+
+#: templates/admin-page-options.php:15
+msgid "Child Menu"
+msgstr "Дочерние меню"
+
+#: templates/admin-page-options.php:12
+msgid "If checked, each user with access to the admin panel can save hidden menu settings individually for their own preferences."
+msgstr "Если отмечено, каждый пользователь с доступом к административной панели может сохранить скрытые настройки меню индивидуально для своих предпочтений."
+
+#: templates/admin-page-options.php:11
+msgid "Allow other users to set their own preferences."
+msgstr "Разрешить другим пользователям настраивать меню для себя на своё усмотрение."
+
+#: templates/admin-page-options.php:7
+msgid "User-specific settings"
+msgstr "Индивидуальные настройки"
+
+#: src/Settings_Page.php:37
+msgid "Settings"
+msgstr "Настройки"
+
+#: src/Settings_Page.php:17 src/Settings_Page.php:18
+msgid "Admin Menu Settings"
+msgstr "Настройки меню администратора"
+
+#: src/Assets.php:38
+msgid "Hide menu"
+msgstr "Скрыть меню"
+
+#: src/Assets.php:37 templates/switcher.php:26
+msgid "No hidden menu items"
+msgstr "Скрытые меню отсутствуют"
+
+#: src/Ajax.php:23 src/Ajax.php:40 src/Ajax.php:59 src/Ajax.php:79
+#: src/Ajax.php:98
+msgid "Sorry, you are not allowed to manage options for this site."
+msgstr "Извините, у вас нет прав на управление опциями для этого сайта."
+
+#. Description of the plugin
+#: ehami.php
+msgid "The plugin allows hiding selected admin menu items."
+msgstr "Плагин позволяет скрывать выбранные пункты меню администратора."
+
+#. Plugin URI of the plugin
+#: ehami.php
+msgid "https://github.com/campusboy87/easy-hide-admin-menu-items"
+msgstr "https://github.com/campusboy87/easy-hide-admin-menu-items"
+
+#. Plugin Name of the plugin
+#: ehami.php
+msgid "Easy Hide Admin Menu Items"
+msgstr "Easy Hide Admin Menu Items"

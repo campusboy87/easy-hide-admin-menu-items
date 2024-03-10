@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Easy Hide Admin Menu Items\n"
-"POT-Creation-Date: 2024-02-08 10:54+0300\n"
-"PO-Revision-Date: 2024-02-08 10:53+0300\n"
+"POT-Creation-Date: 2024-03-07 07:45+0300\n"
+"PO-Revision-Date: 2024-03-07 07:45+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,41 +21,42 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: src/Ajax.php:21 src/Ajax.php:38 src/Ajax.php:57 src/Ajax.php:77
+#: src/Ajax.php:23 src/Ajax.php:40 src/Ajax.php:59 src/Ajax.php:79
+#: src/Ajax.php:98
 msgid "Sorry, you are not allowed to manage options for this site."
 msgstr ""
 
-#: src/Assets.php:28 templates/switcher.php:25
+#: src/Assets.php:37 templates/switcher.php:26
 msgid "No hidden menu items"
 msgstr ""
 
-#: src/Assets.php:29
+#: src/Assets.php:38
 msgid "Hide menu"
 msgstr ""
 
-#: src/Review.php:154
+#: src/Review.php:155
 msgid "Hello!"
 msgstr ""
 
 #. translators: %s is a placeholder for the plugin name
-#: src/Review.php:160
+#: src/Review.php:161
 #, php-format
 msgid "We are very pleased that you are using the %s plugin within a few days."
 msgstr ""
 
-#: src/Review.php:165
+#: src/Review.php:166
 msgid "Please rate plugin. It will help us a lot."
 msgstr ""
 
-#: src/Review.php:171
+#: src/Review.php:172
 msgid "Don't show again!"
 msgstr ""
 
-#: src/Review.php:179
+#: src/Review.php:180
 msgid "Remind me later"
 msgstr ""
 
-#: src/Review.php:187
+#: src/Review.php:190
 msgid "Leave feedback"
 msgstr ""
 
@@ -125,22 +126,42 @@ msgstr ""
 msgid "Message From the Author"
 msgstr ""
 
-#: templates/admin-page-options.php:96
+#: templates/admin-page-options.php:98
 msgid ""
 "Thank you for using Easy Hide Admin Menu Items! Your feedback and comments "
 "are highly valuable to us and will assist us in improving the plugin further."
 msgstr ""
 
-#: templates/admin-page-options.php:97
-msgid "For support, please contact our helpdesk."
+#: templates/admin-page-options.php:108
+msgid ""
+"For support, please contact our helpdesk. If you encounter any issues or "
+"have any questions, feel free to"
 msgstr ""
 
-#: templates/switcher.php:9
+#: templates/admin-page-options.php:109
+msgid "contact us here"
+msgstr ""
+
+#: templates/admin-page-options.php:121
+msgid ""
+"Please consider leaving a review for our plugin. Your reviews help us "
+"improve and serve you better."
+msgstr ""
+
+#: templates/admin-page-options.php:123
+msgid "Leave a review"
+msgstr ""
+
+#: templates/switcher.php:10
 msgid "Hide or show selected menu items"
 msgstr ""
 
-#: templates/switcher.php:21
+#: templates/switcher.php:22
 msgid "Remove from the list"
+msgstr ""
+
+#: templates/switcher.php:36
+msgid "Don't display hide icons"
 msgstr ""
 
 #. Plugin Name of the plugin/theme

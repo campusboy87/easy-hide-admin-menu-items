@@ -5,13 +5,13 @@
  * Text Domain: ehami
  * Domain Path: /languages
  * Description: The plugin allows hiding selected admin menu items.
- * Version: 1.3.6
+ * Version: 1.3.7
  * Author: Campusboy, Dan Zakirov, Tkama
  * License: GPL-2.0+
  * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
  * Requires PHP: 7.0
  * Requires at least: 5.9.0
- * Tested up to: 6.4
+ * Tested up to: 6.5
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
