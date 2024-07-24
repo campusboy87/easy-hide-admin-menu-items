@@ -3,8 +3,8 @@ Contributors: campusboy1987, alexodiy, tkama
 Donate link: #
 Tags: admin menu, hide menu, dashboard, customization menu
 Requires at least: 5.9.0
-Tested up to: 6.5
-Stable tag: 1.3.7
+Tested up to: 6.6
+Stable tag: 1.3.8
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -79,6 +79,9 @@ You can install this plugin in two ways:
 4. Experience a user-friendly admin panel with our plugin's sleek design
 
 == Changelog ==
+
+= 1.3.8 =
+- Tested on WordPress 6.6
 
 = 1.3.7 =
 - Tested with WordPress 6.5.
