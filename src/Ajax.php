@@ -42,11 +42,17 @@ class Ajax {
 			);
 		}
 
-		plugin()->settings->save_options( [
+		$options = [
 			'save_individually'            => (bool) sanitize_text_field( wp_unslash( $_POST['options']['save_individually'] ?? false ) ),
 			'hide_submenu'                 => (bool) sanitize_text_field( wp_unslash( $_POST['options']['hide_submenu'] ?? false ) ),
 			'remove_all_data_on_uninstall' => (bool) sanitize_text_field( wp_unslash( $_POST['options']['remove_all_data_on_uninstall'] ?? false ) ),
-		] );
+		];
+
+		if ( isset( $_POST['options']['separators_mode'] ) ) {
+			$options['separators_mode'] = sanitize_text_field( wp_unslash( $_POST['options']['separators_mode'] ) );
+		}
+
+		plugin()->settings->save_options( $options );
 
 		wp_die();
 	}

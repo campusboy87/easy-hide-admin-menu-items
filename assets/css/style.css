@@ -676,3 +676,39 @@
 #wpadminbar .ehami-block-checkbox:hover label{
     color: #eee;
 }
+
+/**
+ * Experimental badge and separator row
+ */
+
+.ehami-settings__experimental-badge {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ehami-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.ehami-badge--experimental {
+    background: #fcf0c3;
+    color: #6e4e00;
+}
+
+.ehami-settings__separator-row td {
+    padding: 0;
+}
+
+.ehami-settings__separator-row hr {
+    margin: 0;
+    border: none;
+    border-top: 1px solid #ccc;
+}

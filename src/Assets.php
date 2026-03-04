@@ -38,28 +38,43 @@ class Assets {
 			'hid'          => __( 'Hide menu', 'ehami' ),
 			'count_items'  => count( plugin()->settings->items ),
 			'hide_submenu' => plugin()->settings->hide_submenu,
+			'saved'        => __( 'Settings saved.', 'ehami' ),
+			'save_error'   => __( 'Error saving settings.', 'ehami' ),
 		];
 		wp_add_inline_script( 'ehami-user-interface', 'const ehami = ' . wp_json_encode( $data ), 'before' );
+
+		wp_enqueue_script( 'ehami-experimental', plugin()->url . '/assets/js/experimental.js', [ 'jquery' ], plugin()->info['version'], true );
 	}
 
 	public function add_inline_style( string $handle ) {
-		$items = plugin()->settings->items;
-
-		if ( ! $items ) {
-			return;
-		}
-
 		$css = '';
-		foreach ( $items as $id => $text ) {
-			if ( str_contains( $id, '.php' ) ) {
-				// for submenu items
-				$css .= sprintf( '.ehami-enable #adminmenu .wp-submenu a[href="%s"] { display: none; }', esc_attr( $id ) );
-			} elseif ( str_contains( $id, '#' ) ) {
-				// for parent menu items
-				$css .= sprintf( '.ehami-enable #adminmenu %s { display: none; }', esc_attr( $id ) );
+
+		// Hidden menu items.
+		$items = plugin()->settings->items;
+		if ( $items ) {
+			foreach ( $items as $id => $text ) {
+				if ( strpos( $id, '.php' ) !== false ) {
+					// for submenu items
+					$css .= sprintf( '.ehami-enable #adminmenu .wp-submenu a[href="%s"] { display: none; }', esc_attr( $id ) );
+				} elseif ( strpos( $id, '#' ) !== false ) {
+					// for parent menu items
+					$css .= sprintf( '.ehami-enable #adminmenu %s { display: none; }', esc_attr( $id ) );
+				}
 			}
 		}
-		wp_add_inline_style( $handle, $css );
+
+		// Separators mode.
+		$separators_mode = plugin()->settings->separators_mode;
+		if ( $separators_mode === 'hidden' ) {
+			$css .= '#adminmenu li.wp-menu-separator { display: none; }';
+		} elseif ( $separators_mode === 'highlight' ) {
+			$css .= '#adminmenu li.wp-menu-separator { height: auto; margin: 0; }';
+			$css .= '#adminmenu li.wp-menu-separator > .separator { height: 2px; margin: 8px 12px; background: rgba(255,255,255,0.08); border: none; }';
+		}
+
+		if ( $css ) {
+			wp_add_inline_style( $handle, $css );
+		}
 	}
 
 }

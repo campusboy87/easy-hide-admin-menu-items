@@ -240,17 +240,12 @@
         if (dataId.includes("#")) {
             var targetId = dataId;
             var $targetElement = $(targetId);
-            console.log($targetElement);
             if ($targetElement.length) {
                 // Find the first anchor tag inside the target element
                 var $link = $targetElement.find("a");
                 if ($link.length) {
                     $link.get(0).click();
-                } else {
-                    console.log("No link found inside the target element.");
                 }
-            } else {
-                console.log("Target element with id " + targetId + " not found.");
             }
         } else {
             // No '#' in data-id, assuming it's a URL

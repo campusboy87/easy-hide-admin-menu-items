@@ -3,12 +3,13 @@
 namespace EHAMI;
 
 /**
- * @property-read array $items
- * @property-read bool $status
- * @property-read bool $save_individually
- * @property-read bool $hide_submenu
- * @property-read bool $remove_all_data_on_uninstall
- * @property-read bool $hide_icons_disable
+ * @property-read array  $items
+ * @property-read bool   $status
+ * @property-read bool   $save_individually
+ * @property-read bool   $hide_submenu
+ * @property-read bool   $remove_all_data_on_uninstall
+ * @property-read bool   $hide_icons_disable
+ * @property-read string $separators_mode
  */
 class Settings {
 
@@ -22,6 +23,8 @@ class Settings {
 		'hide_submenu'                 => false,
 		'remove_all_data_on_uninstall' => false,
 		'hide_icons_disable'           => false,
+		// Experimental features.
+		'separators_mode'              => 'default',
 	];
 
 	/**
@@ -86,6 +89,12 @@ class Settings {
 
 		if ( isset( $new_options['items'] ) && is_array( $new_options['items'] ) ) {
 			$options['items'] = array_map( 'sanitize_text_field', $new_options['items'] );
+		}
+
+		if ( isset( $new_options['separators_mode'] ) ) {
+			$allowed_modes = [ 'default', 'hidden', 'highlight' ];
+			$mode          = sanitize_text_field( $new_options['separators_mode'] );
+			$options['separators_mode'] = in_array( $mode, $allowed_modes, true ) ? $mode : 'default';
 		}
 
 		return $options;

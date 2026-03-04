@@ -232,7 +232,6 @@ class Review {
 	 */
 	public function leave_feedback_ajax_callback() {
 		$this->review_ajax_callback( 'feedback_submitted', '+5 years' );
-		wp_die();
 	}
 
 	/**
@@ -240,7 +239,6 @@ class Review {
 	 */
 	public function remind_ajax_callback() {
 		$this->review_ajax_callback( 'remind_submitted', '+1 days' );
-		wp_die();
 	}
 
 	/**
@@ -248,6 +246,5 @@ class Review {
 	 */
 	public function already_ajax_callback() {
 		$this->review_ajax_callback( 'already_submitted', '+4 years' );
-		wp_die();
 	}
 }

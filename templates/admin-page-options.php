@@ -28,6 +28,13 @@ $fields = [
 		'help'        => __( 'If checked, all data (option and user metadata) will be deleted when the plugin is deleted.', 'ehami' ),
 	],
 ];
+
+$current_separators_mode = plugin()->settings->separators_mode;
+$separators_options      = [
+	'default'   => __( 'No changes (default)', 'ehami' ),
+	'hidden'    => __( 'Hide all separators', 'ehami' ),
+	'highlight' => __( 'Highlight separators', 'ehami' ),
+];
 ?>
 
 <div id="ehami-settings-page" class="wrap ehami-settings">
@@ -78,6 +85,50 @@ $fields = [
 								</td>
 							</tr>
 						<?php } ?>
+
+						<!-- Experimental: Separators -->
+						<tr class="ehami-settings__separator-row">
+							<td colspan="2"><hr></td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<label for="ehami_separators_mode">
+									<?php esc_html_e( 'Menu Separators', 'ehami' ); ?>
+								</label>
+							</th>
+							<td>
+								<fieldset class="ehami-settings__main-fieldset">
+									<legend class="screen-reader-text">
+										<span><?php esc_html_e( 'Menu Separators', 'ehami' ); ?></span>
+									</legend>
+
+									<div class="ehami-settings__main-field">
+										<select id="ehami_separators_mode" name="separators_mode">
+											<?php foreach ( $separators_options as $value => $label ) : ?>
+												<option
+													value="<?php echo esc_attr( $value ); ?>"
+													<?php selected( $current_separators_mode, $value ); ?>
+												>
+													<?php echo esc_html( $label ); ?>
+												</option>
+											<?php endforeach; ?>
+										</select>
+									</div>
+
+									<div class="ehami-settings__main-field-description">
+										<p class="description">
+											<?php esc_html_e( 'Control the visibility of separator lines between menu groups in the admin sidebar.', 'ehami' ); ?>
+										</p>
+										<p class="ehami-settings__experimental-badge">
+											<span class="ehami-badge ehami-badge--experimental"><?php esc_html_e( 'Experimental', 'ehami' ); ?></span>
+											<a href="https://wordpress.org/support/plugin/easy-hide-admin-menu-items/" target="_blank">
+												<?php esc_html_e( 'Share your feedback', 'ehami' ); ?>
+											</a>
+										</p>
+									</div>
+								</fieldset>
+							</td>
+						</tr>
 						</tbody>
 					</table>
 
@@ -89,7 +140,7 @@ $fields = [
 				</div>
 			</div>
 
-			<!-- Added a block for the author's message -->
+		<!-- Added a block for the author's message -->
 			<div id="ehami-author-info" class="stuffbox ehami-settings__author">
 				<h2 class="ehami-settings__author-title"><?php esc_html_e( 'Message From the Author', 'ehami' ); ?></h2>
 				<div class="inside ehami-settings__author-content">
