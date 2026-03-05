@@ -18,12 +18,22 @@ class Assets {
 		 */
 		if ( true === plugin()->settings->save_individually || current_user_can( 'administrator' ) ) {
 
+			// SortableJS library for menu drag-and-drop reordering.
+			wp_enqueue_script(
+				'sortablejs',
+				plugin()->url . '/assets/js/vendor/Sortable.min.js',
+				[],
+				'1.15.7',
+				true
+			);
+
 			wp_enqueue_script(
 				'ehami-user-interface',
 				plugin()->url . '/assets/js/user-interface.js',
 				[
 					'jquery',
 					'jquery-effects-transfer',
+					'sortablejs',
 				],
 				plugin()->info['version'],
 				true
@@ -33,13 +43,14 @@ class Assets {
 
 		wp_enqueue_script( 'ehami-settings-page', plugin()->url . '/assets/js/settings-page.js', [ 'jquery' ], plugin()->info['version'], true );
 		$data = [
-			'nonce'        => wp_create_nonce( 'ehami-nonce' ),
-			'no_items'     => __( 'No hidden menu items', 'ehami' ),
-			'hid'          => __( 'Hide menu', 'ehami' ),
-			'count_items'  => count( plugin()->settings->items ),
-			'hide_submenu' => plugin()->settings->hide_submenu,
-			'saved'        => __( 'Settings saved.', 'ehami' ),
-			'save_error'   => __( 'Error saving settings.', 'ehami' ),
+			'nonce'               => wp_create_nonce( 'ehami-nonce' ),
+			'no_items'            => __( 'No hidden menu items', 'ehami' ),
+			'hid'                 => __( 'Hide menu', 'ehami' ),
+			'count_items'         => count( plugin()->settings->items ),
+			'hide_submenu'        => plugin()->settings->hide_submenu,
+			'saved'               => __( 'Settings saved.', 'ehami' ),
+			'save_error'          => __( 'Error saving settings.', 'ehami' ),
+			'enable_menu_sorting' => true, // TODO: replace with setting from DB
 		];
 		wp_add_inline_script( 'ehami-user-interface', 'const ehami = ' . wp_json_encode( $data ), 'before' );
 

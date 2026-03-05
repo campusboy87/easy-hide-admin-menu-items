@@ -277,4 +277,55 @@
         toggleEhamiHideIcons();
     }());
 
+    /**
+     * Menu sorting via SortableJS — drag by handle icon.
+     *
+     * A drag handle icon appears on the right side of each menu item on hover
+     * (same animation pattern as the hide icon on the left).
+     * Drag only works via the handle — normal clicks navigate as usual.
+     *
+     * Prototype: visual drag-and-drop only, no backend save.
+     *
+     * @since 1.4.0
+     */
+    (function () {
+        if (!plugin.enable_menu_sorting) {
+            return;
+        }
+
+        var menuEl = document.getElementById('adminmenu');
+        if (!menuEl) {
+            return;
+        }
+
+        // Add drag handle icon to each top-level menu item.
+        $('li.menu-top', $sidebar).each(function () {
+            $(this).append(
+                '<span class="dashicons dashicons-menu ehami-sort-handle" title="Drag to reorder"></span>'
+            );
+        });
+
+        Sortable.create(menuEl, {
+            handle: '.ehami-sort-handle',
+            animation: 150,
+            forceFallback: true,
+            fallbackOnBody: false,
+            fallbackTolerance: 3,
+            ghostClass: 'ehami-sortable-ghost',
+            chosenClass: 'ehami-sortable-chosen',
+            dragClass: 'ehami-sortable-drag',
+            direction: 'vertical',
+            onStart: function () {
+                // Read actual sidebar background and expose as CSS variable.
+                var bg = window.getComputedStyle(menuEl).backgroundColor;
+                document.body.style.setProperty('--ehami-sidebar-bg', bg);
+                $('body').addClass('ehami-sorting-active');
+            },
+            onEnd: function () {
+                $('body').removeClass('ehami-sorting-active');
+                document.body.style.removeProperty('--ehami-sidebar-bg');
+            }
+        });
+    }());
+
 })(jQuery);
