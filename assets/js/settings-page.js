@@ -79,6 +79,27 @@
      * @param {string} type    "success" or "error"
      * @param {string} message
      */
+    /**
+     * Reset menu order — removes saved order, restores WP defaults.
+     */
+    $('#ehami-reset-menu-order').on('click', function (e) {
+        e.preventDefault();
+
+        var $link = $(this);
+        $link.css('opacity', 0.5);
+
+        $.post(ajaxurl, {
+            action: 'ehami_reset_menu_order',
+            _ajax_nonce: plugin.nonce
+        }).done(function () {
+            $link.css('opacity', 1);
+            showNotice('success', plugin.saved || 'Settings saved.');
+        }).fail(function () {
+            $link.css('opacity', 1);
+            showNotice('error', plugin.save_error || 'Error.');
+        });
+    });
+
     function showNotice(type, message) {
         var $existing = $container.find('.ehami-notice');
         $existing.remove();

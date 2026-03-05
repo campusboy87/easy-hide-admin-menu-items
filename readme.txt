@@ -40,6 +40,13 @@ Key Features:
 
 Enhance your WordPress admin panel experience by effortlessly managing menu items and optimizing the interface according to your specific needs. Experience a clutter-free and user-friendly environment with Easy Hide Admin Menu Items.
 
+### Experimental Features (1.4.0)
+
+These features are available under Appearance → Admin Menu Settings. They are marked as experimental and your feedback is welcome.
+
+* **Menu Sorting:** Drag-and-drop reordering of admin menu items. A handle icon appears on hover — grab it to move items up or down. Your custom order is saved per user or globally depending on your settings. Disabling this option preserves your saved order.
+* **Menu Separators:** Control the visibility of separator lines between menu groups. Choose to hide them completely or highlight them for better visual separation.
+
 == Frequently Asked Questions ==
 
 = How to hide a menu? =
@@ -81,6 +88,13 @@ You can install this plugin in two ways:
 4. Experience a user-friendly admin panel with our plugin's sleek design
 
 == Changelog ==
+
+= 1.4.0 =
+- Added: Menu Sorting — drag-and-drop reorder of admin menu items (experimental).
+- Added: Menu Separators control — hide or highlight separator lines (experimental).
+- Fixed: PHP 7.0 compatibility (replaced str_contains with strpos).
+- Fixed: Removed console.log from production JavaScript.
+- Fixed: Double wp_die() in Review ajax callbacks.
 
 = 1.3.9 =
 - Tested on WordPress 6.9.

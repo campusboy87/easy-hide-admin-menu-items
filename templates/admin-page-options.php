@@ -86,16 +86,65 @@ $separators_options      = [
 							</tr>
 						<?php } ?>
 
-						<!-- Experimental: Separators -->
-						<tr class="ehami-settings__separator-row">
-							<td colspan="2"><hr></td>
-						</tr>
-						<tr>
-							<th scope="row">
-								<label for="ehami_separators_mode">
-									<?php esc_html_e( 'Menu Separators', 'ehami' ); ?>
-								</label>
-							</th>
+					<!-- Experimental: Menu Sorting -->
+					<tr class="ehami-settings__separator-row">
+						<td colspan="2"><hr></td>
+					</tr>
+					<tr>
+						<th scope="row">
+							<label for="ehami_enable_menu_sorting">
+								<?php esc_html_e( 'Menu Sorting', 'ehami' ); ?>
+							</label>
+						</th>
+						<td>
+							<fieldset class="ehami-settings__main-fieldset">
+								<legend class="screen-reader-text">
+									<span><?php esc_html_e( 'Menu Sorting', 'ehami' ); ?></span>
+								</legend>
+
+								<div class="ehami-settings__main-field">
+									<label for="ehami_enable_menu_sorting">
+										<input
+												type="checkbox"
+												id="ehami_enable_menu_sorting"
+												name="enable_menu_sorting"
+												value="1" <?php checked( plugin()->settings->enable_menu_sorting, true ); ?>
+										>
+										<?php esc_html_e( 'Enable drag-and-drop menu reordering', 'ehami' ); ?>
+									</label>
+								</div>
+
+								<div class="ehami-settings__main-field-description">
+									<p class="description">
+										<?php esc_html_e( 'Drag the handle icon on the right side of menu items to reorder them. Your custom order is preserved when this option is disabled.', 'ehami' ); ?>
+									</p>
+									<p class="ehami-settings__experimental-badge">
+										<span class="ehami-badge ehami-badge--experimental"><?php esc_html_e( 'Experimental', 'ehami' ); ?></span>
+										<a href="https://wordpress.org/support/plugin/easy-hide-admin-menu-items/" target="_blank">
+											<?php esc_html_e( 'Share your feedback', 'ehami' ); ?>
+										</a>
+									</p>
+									<p class="ehami-settings__reset-order">
+										<a href="#" id="ehami-reset-menu-order" class="ehami-reset-link">
+											<span class="dashicons dashicons-image-rotate"></span>
+											<?php esc_html_e( 'Reset menu order', 'ehami' ); ?>
+										</a>
+									</p>
+								</div>
+							</fieldset>
+						</td>
+					</tr>
+
+					<!-- Experimental: Separators -->
+					<tr class="ehami-settings__separator-row">
+						<td colspan="2"><hr></td>
+					</tr>
+					<tr>
+						<th scope="row">
+							<label for="ehami_separators_mode">
+								<?php esc_html_e( 'Menu Separators', 'ehami' ); ?>
+							</label>
+						</th>
 							<td>
 								<fieldset class="ehami-settings__main-fieldset">
 									<legend class="screen-reader-text">

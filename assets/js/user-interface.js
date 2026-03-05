@@ -298,6 +298,22 @@
             return;
         }
 
+        // Restore saved menu order by reordering DOM elements.
+        var savedOrder = plugin.menu_order;
+        if (savedOrder && typeof savedOrder === 'object') {
+            var entries = [];
+            $.each(savedOrder, function (selector, position) {
+                entries.push({ selector: selector, position: position });
+            });
+            entries.sort(function (a, b) { return a.position - b.position; });
+            $.each(entries, function (i, entry) {
+                var $el = $(entry.selector, $sidebar);
+                if ($el.length) {
+                    $sidebar.append($el);
+                }
+            });
+        }
+
         // Add drag handle icon to each top-level menu item.
         $('li.menu-top', $sidebar).each(function () {
             $(this).append(
@@ -324,6 +340,21 @@
             onEnd: function () {
                 $('body').removeClass('ehami-sorting-active');
                 document.body.style.removeProperty('--ehami-sidebar-bg');
+
+                // Build order map from current DOM order and save via AJAX.
+                var orderMap = {};
+                $(menuEl).children('li').each(function (i) {
+                    var id = $(this).attr('id');
+                    if (id) {
+                        orderMap['#' + id] = i;
+                    }
+                });
+
+                $.post(ajaxurl, {
+                    action: 'ehami_save_menu_order',
+                    order: orderMap,
+                    _ajax_nonce: plugin.nonce
+                });
             }
         });
     }());

@@ -713,6 +713,27 @@
 	border-top: 1px solid #ccc;
 }
 
+.ehami-settings__reset-order {
+	margin-top: 6px;
+}
+
+.ehami-reset-link {
+	color: #b32d2e;
+	text-decoration: none;
+}
+
+.ehami-reset-link:hover {
+	color: #a00;
+}
+
+.ehami-reset-link .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+	vertical-align: text-bottom;
+	margin-right: 2px;
+}
+
 /**
  * Menu sorting — SortableJS + drag handle.
  * Handle icon appears on hover (right side), same animation as hide icon (left side).

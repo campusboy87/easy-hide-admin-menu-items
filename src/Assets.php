@@ -50,7 +50,8 @@ class Assets {
 			'hide_submenu'        => plugin()->settings->hide_submenu,
 			'saved'               => __( 'Settings saved.', 'ehami' ),
 			'save_error'          => __( 'Error saving settings.', 'ehami' ),
-			'enable_menu_sorting' => true, // TODO: replace with setting from DB
+			'enable_menu_sorting' => plugin()->settings->enable_menu_sorting,
+			'menu_order'          => plugin()->settings->menu_order,
 		];
 		wp_add_inline_script( 'ehami-user-interface', 'const ehami = ' . wp_json_encode( $data ), 'before' );
 
