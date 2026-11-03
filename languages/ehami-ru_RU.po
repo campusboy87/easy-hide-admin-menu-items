@@ -1,35 +1,43 @@
-# Translation of Plugins - Easy Hide Admin Menu Items - Stable (latest release) in Russian
-# This file is distributed under the same license as the Plugins - Easy Hide Admin Menu Items - Stable (latest release) package.
+# Translation of Easy Hide Admin Menu Items in Russian
+# This file is distributed under the same license as the Easy Hide Admin Menu Items package.
 msgid ""
 msgstr ""
+"Project-Id-Version: Easy Hide Admin Menu Items 1.4.0-beta.1\n"
 "PO-Revision-Date: 2024-03-06 19:20:09+0000\n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
 "X-Generator: GlotPress/4.0.0-rc.1\n"
-"Language: ru\n"
-"Project-Id-Version: Plugins - Easy Hide Admin Menu Items - Stable (latest release)\n"
 
 #: templates/switcher.php:36
 msgid "Don't display hide icons"
 msgstr "Отключить иконки скрытия"
 
-#: templates/admin-page-options.php:123
+#: templates/admin-page-options.php:275
 msgid "Leave a review"
 msgstr "Оставить отзыв"
 
-#: templates/admin-page-options.php:121
-msgid "Please consider leaving a review for our plugin. Your reviews help us improve and serve you better."
-msgstr "Пожалуйста, рассмотрите возможность оставить отзыв о нашем плагине. Ваша обратная связь мотивирует нас качественно улучшать сервис."
+#: templates/admin-page-options.php:273
+msgid ""
+"Please consider leaving a review for our plugin. Your reviews help us "
+"improve and serve you better."
+msgstr ""
+"Пожалуйста, рассмотрите возможность оставить отзыв о нашем плагине. Ваша "
+"обратная связь мотивирует нас качественно улучшать сервис."
 
-#: templates/admin-page-options.php:109
+#: templates/admin-page-options.php:261
 msgid "contact us here"
 msgstr "обращаться к нам"
 
-#: templates/admin-page-options.php:108
-msgid "For support, please contact our helpdesk. If you encounter any issues or have any questions, feel free to"
-msgstr "Для получения поддержки, пожалуйста, обратитесь на форум. Если у вас возникнут проблемы или вопросы, не стесняйтесь"
+#: templates/admin-page-options.php:260
+msgid ""
+"For support, please contact our helpdesk. If you encounter any issues or "
+"have any questions, feel free to"
+msgstr ""
+"Для получения поддержки, пожалуйста, обратитесь на форум. Если у вас "
+"возникнут проблемы или вопросы, не стесняйтесь"
 
 #: src/Review.php:190
 msgid "Leave feedback"
@@ -49,15 +57,16 @@ msgstr "Пожалуйста, оцените плагин. Это нам оче�
 
 #. translators: %s is a placeholder for the plugin name
 #: src/Review.php:161
-msgid "We are very pleased that you are using the %s plugin within a few days."
+#, php-format
+msgid ""
+"We are very pleased that you are using the %s plugin within a few days."
 msgstr "Мы очень рады, что вы используете плагин %s уже несколько дней."
 
 #: src/Review.php:155
 msgid "Hello!"
 msgstr "Здравствуйте!"
 
-#. Author of the plugin
-#: ehami.php
+#. Author of the plugin/theme
 msgid "Campusboy, Dan Zakirov, Tkama"
 msgstr "Campusboy, Dan Zakirov, Tkama"
 
@@ -69,41 +78,55 @@ msgstr "Удалить из списка"
 msgid "Hide or show selected menu items"
 msgstr "Скрыть или показать скрытые пункты меню"
 
-#: templates/admin-page-options.php:98
-msgid "Thank you for using Easy Hide Admin Menu Items! Your feedback and comments are highly valuable to us and will assist us in improving the plugin further."
-msgstr "Благодарим вас за использование плагина Easy Hide Admin Menu Items! Ваши отзывы и комментарии имеют для нас большую ценность и помогут нам дальше улучшать плагин."
+#: templates/admin-page-options.php:250
+msgid ""
+"Thank you for using Easy Hide Admin Menu Items! Your feedback and comments "
+"are highly valuable to us and will assist us in improving the plugin "
+"further."
+msgstr ""
+"Благодарим вас за использование плагина Easy Hide Admin Menu Items! Ваши "
+"отзывы и комментарии имеют для нас большую ценность и помогут нам дальше "
+"улучшать плагин."
 
-#: templates/admin-page-options.php:94
+#: templates/admin-page-options.php:246
 msgid "Message From the Author"
 msgstr "Сообщение от авторов"
 
-#: templates/admin-page-options.php:84
+#: templates/admin-page-options.php:234
 msgid "Save Settings"
 msgstr "Сохранить настройки"
 
-#: templates/admin-page-options.php:44
+#: templates/admin-page-options.php:52
 msgid "Main Settings"
 msgstr "Основные настройки"
 
-#: templates/admin-page-options.php:35
+#: templates/admin-page-options.php:43
 msgid "Easy Hide Admin Menu Items Settings"
 msgstr "Настройки Easy Hide Admin Menu Items"
 
-#: templates/admin-page-options.php:28
-msgid "If checked, all data (option and user metadata) will be deleted when the plugin is deleted."
-msgstr "Если отмечено, то все данные (опции и метаданные пользователей) будут удалены из базы данных при удалении плагина."
+#: templates/admin-page-options.php:29
+msgid ""
+"If checked, all data (option and user metadata) will be deleted when the "
+"plugin is deleted."
+msgstr ""
+"Если отмечено, то все данные (опции и метаданные пользователей) будут "
+"удалены из базы данных при удалении плагина."
 
-#: templates/admin-page-options.php:27
+#: templates/admin-page-options.php:28
 msgid "Allow the deletion of all plugin data after it is deleted"
 msgstr "Разрешить удаление всех данных после удаления плагина"
 
-#: templates/admin-page-options.php:23
+#: templates/admin-page-options.php:24
 msgid "Uninstall plugin"
 msgstr "Удаление плагина"
 
 #: templates/admin-page-options.php:20
-msgid "If checked, you can hide the child menu. This may be useful when there are too many child menus causing distraction."
-msgstr "Если отмечено, вы можете скрывать дочерние меню. Это может быть полезно, когда слишком много дочерних меню которыми вы не пользуетесь."
+msgid ""
+"If checked, you can hide the child menu. This may be useful when there are "
+"too many child menus causing distraction."
+msgstr ""
+"Если отмечено, вы можете скрывать дочерние меню. Это может быть полезно, "
+"когда слишком много дочерних меню которыми вы не пользуетесь."
 
 #: templates/admin-page-options.php:19
 msgid "Allow hiding child admin menus"
@@ -114,12 +137,17 @@ msgid "Child Menu"
 msgstr "Дочерние меню"
 
 #: templates/admin-page-options.php:12
-msgid "If checked, each user with access to the admin panel can save hidden menu settings individually for their own preferences."
-msgstr "Если отмечено, каждый пользователь с доступом к административной панели может сохранить скрытые настройки меню индивидуально для своих предпочтений."
+msgid ""
+"If checked, each user with access to the admin panel can save hidden menu "
+"settings individually for their own preferences."
+msgstr ""
+"Если отмечено, каждый пользователь с доступом к административной панели "
+"может сохранить скрытые настройки меню индивидуально для своих предпочтений."
 
 #: templates/admin-page-options.php:11
 msgid "Allow other users to set their own preferences."
-msgstr "Разрешить другим пользователям настраивать меню для себя на своё усмотрение."
+msgstr ""
+"Разрешить другим пользователям настраивать меню для себя на своё усмотрение."
 
 #: templates/admin-page-options.php:7
 msgid "User-specific settings"
@@ -133,30 +161,110 @@ msgstr "Настройки"
 msgid "Admin Menu Settings"
 msgstr "Настройки меню администратора"
 
-#: src/Assets.php:38
+#: src/Assets.php:35
 msgid "Hide menu"
 msgstr "Скрыть меню"
 
-#: src/Assets.php:37 templates/switcher.php:26
+#: src/Assets.php:34 templates/switcher.php:26
 msgid "No hidden menu items"
 msgstr "Скрытые меню отсутствуют"
 
-#: src/Ajax.php:23 src/Ajax.php:40 src/Ajax.php:59 src/Ajax.php:79
-#: src/Ajax.php:98
+#: src/Ajax.php:27 src/Ajax.php:44 src/Ajax.php:71 src/Ajax.php:91
+#: src/Ajax.php:110 src/Ajax.php:132 src/Ajax.php:162 src/Ajax.php:184
+#: src/Ajax.php:208
 msgid "Sorry, you are not allowed to manage options for this site."
 msgstr "Извините, у вас нет прав на управление опциями для этого сайта."
 
-#. Description of the plugin
-#: ehami.php
+#. Description of the plugin/theme
 msgid "The plugin allows hiding selected admin menu items."
 msgstr "Плагин позволяет скрывать выбранные пункты меню администратора."
 
-#. Plugin URI of the plugin
-#: ehami.php
+#. Plugin URI of the plugin/theme
 msgid "https://github.com/campusboy87/easy-hide-admin-menu-items"
 msgstr "https://github.com/campusboy87/easy-hide-admin-menu-items"
 
-#. Plugin Name of the plugin
-#: ehami.php
+#. Plugin Name of the plugin/theme
 msgid "Easy Hide Admin Menu Items"
 msgstr "Easy Hide Admin Menu Items"
+
+#: src/Assets.php:38
+msgid "Settings saved."
+msgstr "Настройки сохранены."
+
+#: src/Assets.php:39
+msgid "Error saving settings."
+msgstr "Не удалось сохранить настройки."
+
+#: templates/admin-page-options.php:35
+msgid "No changes (default)"
+msgstr "Без изменений (по умолчанию)"
+
+#: templates/admin-page-options.php:36
+msgid "Hide all separators"
+msgstr "Скрыть все разделители"
+
+#: templates/admin-page-options.php:37
+msgid "Highlight separators"
+msgstr "Выделить разделители"
+
+#: templates/admin-page-options.php:102 templates/admin-page-options.php:108
+msgid "Menu Sorting"
+msgstr "Сортировка меню"
+
+#: templates/admin-page-options.php:119
+msgid "Enable drag-and-drop menu reordering"
+msgstr "Разрешить изменение порядка пунктов меню перетаскиванием"
+
+#: templates/admin-page-options.php:128
+msgid "Drag the handle icon on the right side of menu items to reorder them."
+msgstr ""
+"Чтобы изменить порядок пунктов меню, перетащите значок справа от пункта."
+
+#: templates/admin-page-options.php:131
+msgid "Note:"
+msgstr "Примечание:"
+
+#: templates/admin-page-options.php:132
+msgid ""
+"your custom order is preserved even when this option is disabled. Use "
+"\"Reset menu order\" to restore the default order."
+msgstr ""
+"заданный порядок сохраняется даже при отключении этой настройки. Чтобы "
+"восстановить порядок по умолчанию, нажмите «Сбросить порядок меню»."
+
+#: templates/admin-page-options.php:135 templates/admin-page-options.php:179
+#: templates/admin-page-options.php:224
+msgid "Experimental"
+msgstr "Экспериментальная функция"
+
+#: templates/admin-page-options.php:138
+msgid "Reset menu order"
+msgstr "Сбросить порядок меню"
+
+#: templates/admin-page-options.php:150 templates/admin-page-options.php:156
+msgid "Sidebar Width"
+msgstr "Ширина боковой панели"
+
+#: templates/admin-page-options.php:167
+msgid "Enable sidebar width resize"
+msgstr "Разрешить изменение ширины боковой панели"
+
+#: templates/admin-page-options.php:176
+msgid "Drag the right edge of the sidebar to adjust the menu width."
+msgstr "Чтобы изменить ширину меню, перетащите правый край боковой панели."
+
+#: templates/admin-page-options.php:182
+msgid "Reset sidebar width"
+msgstr "Сбросить ширину боковой панели"
+
+#: templates/admin-page-options.php:194 templates/admin-page-options.php:200
+msgid "Menu Separators"
+msgstr "Разделители меню"
+
+#: templates/admin-page-options.php:221
+msgid ""
+"Control the visibility of separator lines between menu groups in the admin "
+"sidebar."
+msgstr ""
+"Управляйте отображением линий между группами пунктов меню в боковой панели "
+"администратора."

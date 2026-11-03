@@ -42,19 +42,27 @@ class Uninstall {
 	}
 
 	private function delete_users_options( $blog_id ) {
-		$meta_key = $this->settings::USER_ITEMS_META_KEY;
+		$meta_keys = [
+			$this->settings::USER_ITEMS_META_KEY,
+			'hide_icons_disable',
+			'ehami_user_status',
+			'ehami_user_menu_order',
+			'ehami_sidebar_width',
+		];
 
-		$user_ids = get_users(
-			[
-				'blog_id'      => $blog_id,
-				'fields'       => 'ID',
-				'meta_key'     => $meta_key, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
-				'meta_compare' => 'EXISTS',
-			]
-		);
+		foreach ( $meta_keys as $meta_key ) {
+			$user_ids = get_users(
+				[
+					'blog_id'      => $blog_id,
+					'fields'       => 'ID',
+					'meta_key'     => $meta_key, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+					'meta_compare' => 'EXISTS',
+				]
+			);
 
-		foreach ( $user_ids as $user_id ) {
-			delete_user_meta( $user_id, $meta_key );
+			foreach ( $user_ids as $user_id ) {
+				delete_user_meta( $user_id, $meta_key );
+			}
 		}
 	}
 

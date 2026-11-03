@@ -29,8 +29,8 @@ $hide_icons_disable = plugin()->settings->hide_icons_disable;
 
 		<div class="ehami-block-checkbox">
 			<input type="checkbox"
-			       id="hide-icons-checkbox"
-			       name="hide_icons_disable"
+					id="hide-icons-checkbox"
+					name="hide_icons_disable"
 				<?php echo $hide_icons_disable ? 'checked' : ''; ?>
 			/>
 			<label for="hide-icons-checkbox"><?php echo esc_attr__( 'Don\'t display hide icons', 'ehami' ); ?></label>

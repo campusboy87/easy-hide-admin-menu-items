@@ -40,5 +40,4 @@ class Settings_Page {
 
 		return $actions;
 	}
-
 }

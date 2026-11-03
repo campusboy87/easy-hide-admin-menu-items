@@ -21,7 +21,7 @@
     <rule ref="PHPCompatibilityWP"/>
 
     <!-- What to scan -->
-    <file>wp-content/plugins/easy-hide-admin-menu-items/</file>
+    <file>.</file>
 
     <!-- Exclude common files -->
     <exclude-pattern>*/\.idea/*</exclude-pattern>
@@ -45,7 +45,9 @@
     <rule ref="WordPress">
         <!-- Allow short ternary syntax and short arrays and short open tag -->
         <exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
+        <exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
         <exclude name="WordPress.PHP.DisallowShortTernary.Found"/>
+        <exclude name="Universal.Operators.DisallowShortTernary"/>
         <exclude name="Generic.PHP.DisallowShortOpenTag.EchoFound"/>
         <exclude name="Generic.Commenting.DocComment.MissingShort"/>
 

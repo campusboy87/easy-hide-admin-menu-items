@@ -12,7 +12,7 @@ class Switcher {
 		 * Check if the 'save_individually' option is set to true in the global settings.
 		 * If the condition is met, or if the current user is an administrator, initialize the user interface.
 		 */
-		if ( true === plugin()->settings->save_individually || current_user_can( 'administrator' ) ) {
+		if ( plugin()->settings->save_individually || current_user_can( 'manage_options' ) ) {
 			add_action( 'admin_bar_menu', [ $this, 'add_to_admin_bar' ] );
 		}
 
@@ -38,5 +38,4 @@ class Switcher {
 	public function add_admin_body_class( string $classes ): string {
 		return plugin()->settings->status ? $classes . ' ehami-enable' : $classes;
 	}
-
 }
