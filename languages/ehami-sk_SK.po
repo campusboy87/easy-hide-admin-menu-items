@@ -1,0 +1,193 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Easy Hide Admin Menu Items\n"
+"POT-Creation-Date: 2024-03-07 07:45+0300\n"
+"PO-Revision-Date: 2026-11-03 00:57+0100\n"
+"Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
+"Language-Team: Jozef Gaal <preklady@mayday.sk>\n"
+"Language: sk_SK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: ehami.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: src/Ajax.php:23 src/Ajax.php:40 src/Ajax.php:59 src/Ajax.php:79
+#: src/Ajax.php:98
+msgid "Sorry, you are not allowed to manage options for this site."
+msgstr "Prepáčte, nemáte povolenie spravovať nastavenia tejto stránky."
+
+#: src/Assets.php:37 templates/switcher.php:26
+msgid "No hidden menu items"
+msgstr "Žiadne skryté položky ponuky"
+
+#: src/Assets.php:38
+msgid "Hide menu"
+msgstr "Skryť ponuku"
+
+#: src/Review.php:155
+msgid "Hello!"
+msgstr "Dobrý deň!"
+
+#. translators: %s is a placeholder for the plugin name
+#: src/Review.php:161
+#, php-format
+msgid "We are very pleased that you are using the %s plugin within a few days."
+msgstr "Veľmi nás teší, že používate plugin %s už niekoľko dní."
+
+#: src/Review.php:166
+msgid "Please rate plugin. It will help us a lot."
+msgstr "Prosím, ohodnoťte plugin. Veľmi nám to pomôže."
+
+#: src/Review.php:172
+msgid "Don't show again!"
+msgstr "Znovu nezobrazovať!"
+
+#: src/Review.php:180
+msgid "Remind me later"
+msgstr "Pripomenúť neskôr"
+
+#: src/Review.php:190
+msgid "Leave feedback"
+msgstr "Napísať spätnú väzbu"
+
+#: src/Settings_Page.php:17 src/Settings_Page.php:18
+msgid "Admin Menu Settings"
+msgstr "Nastavenia administrátorskej ponuky"
+
+#: src/Settings_Page.php:37
+msgid "Settings"
+msgstr "Nastavenia"
+
+#: templates/admin-page-options.php:7
+msgid "User-specific settings"
+msgstr "Používateľské nastavenia"
+
+#: templates/admin-page-options.php:11
+msgid "Allow other users to set their own preferences."
+msgstr "Povoliť ostatným používateľom nastaviť si vlastné predvoľby."
+
+#: templates/admin-page-options.php:12
+msgid ""
+"If checked, each user with access to the admin panel can save hidden menu "
+"settings individually for their own preferences."
+msgstr ""
+"Ak je zaškrtnuté, každý používateľ s prístupom do administrácie môže "
+"individuálne uložiť nastavenia skrytých položiek ponuky podľa vlastných "
+"preferencií."
+
+#: templates/admin-page-options.php:15
+msgid "Child Menu"
+msgstr "Podradená ponuka"
+
+#: templates/admin-page-options.php:19
+msgid "Allow hiding child admin menus"
+msgstr "Povoliť skrývanie podradených administrátorských ponúk"
+
+#: templates/admin-page-options.php:20
+msgid ""
+"If checked, you can hide the child menu. This may be useful when there are "
+"too many child menus causing distraction."
+msgstr ""
+"Ak je zaškrtnuté, môžete skryť podradenú ponuku. Môže to byť užitočné, keď "
+"existuje príliš mnoho podradených ponúk, ktoré spôsobujú rozptýlenie."
+
+#: templates/admin-page-options.php:23
+msgid "Uninstall plugin"
+msgstr "Odinštalovať plugin"
+
+#: templates/admin-page-options.php:27
+msgid "Allow the deletion of all plugin data after it is deleted"
+msgstr "Povoliť vymazanie všetkých údajov doplnku po jeho odstránení"
+
+#: templates/admin-page-options.php:28
+msgid ""
+"If checked, all data (option and user metadata) will be deleted when the "
+"plugin is deleted."
+msgstr ""
+"Ak je zaškrtnuté, všetky údaje (nastavenia a používateľské metadáta) budú "
+"vymazané pri odstránení pluginu."
+
+#: templates/admin-page-options.php:35
+msgid "Easy Hide Admin Menu Items Settings"
+msgstr "Nastavenia pluginu Easy Hide Admin Menu Items"
+
+#: templates/admin-page-options.php:44
+msgid "Main Settings"
+msgstr "Hlavné nastavenia"
+
+#: templates/admin-page-options.php:84
+msgid "Save Settings"
+msgstr "Uložiť nastavenia"
+
+#: templates/admin-page-options.php:94
+msgid "Message From the Author"
+msgstr "Správa od autora"
+
+#: templates/admin-page-options.php:98
+msgid ""
+"Thank you for using Easy Hide Admin Menu Items! Your feedback and comments "
+"are highly valuable to us and will assist us in improving the plugin further."
+msgstr ""
+"Ďakujeme, že používate Easy Hide Admin Menu Items! Vaša spätná väzba a "
+"pripomienky sú pre nás veľmi cenné a pomôžu nám ďalej vylepšovať plugin."
+
+#: templates/admin-page-options.php:108
+msgid ""
+"For support, please contact our helpdesk. If you encounter any issues or "
+"have any questions, feel free to"
+msgstr ""
+"Ak potrebujete pomoc, obráťte sa na našu technickú podporu. Ak narazíte na "
+"akékoľvek problémy alebo máte akékoľvek otázky, neváhajte a"
+
+#: templates/admin-page-options.php:109
+msgid "contact us here"
+msgstr "kontaktujte nás tu"
+
+#: templates/admin-page-options.php:121
+msgid ""
+"Please consider leaving a review for our plugin. Your reviews help us "
+"improve and serve you better."
+msgstr ""
+"Prosíme, zvážte, či by ste nemohli napísať recenziu na náš plugin. Vaše "
+"recenzie nám pomáhajú zlepšovať sa a poskytovať vám lepšie služby."
+
+#: templates/admin-page-options.php:123
+msgid "Leave a review"
+msgstr "Napíšte recenziu"
+
+#: templates/switcher.php:10
+msgid "Hide or show selected menu items"
+msgstr "Skryť alebo zobraziť vybrané položky ponuky"
+
+#: templates/switcher.php:22
+msgid "Remove from the list"
+msgstr "Odstrániť zo zoznamu"
+
+#: templates/switcher.php:36
+msgid "Don't display hide icons"
+msgstr "Nezobrazovať ikony skrývania"
+
+#. Plugin Name of the plugin/theme
+msgid "Easy Hide Admin Menu Items"
+msgstr "Easy Hide Admin Menu Items"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/campusboy87/easy-hide-admin-menu-items"
+msgstr "https://github.com/campusboy87/easy-hide-admin-menu-items"
+
+#. Description of the plugin/theme
+msgid "The plugin allows hiding selected admin menu items."
+msgstr "Plugin umožňuje skryť vybrané položky administrátorskej ponuky."
+
+#. Author of the plugin/theme
+msgid "Campusboy, Dan Zakirov, Tkama"
+msgstr "Campusboy, Dan Zakirov, Tkama"
