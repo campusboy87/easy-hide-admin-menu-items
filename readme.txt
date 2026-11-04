@@ -83,10 +83,13 @@ You can install this plugin in two ways:
 
 == Screenshots ==
 
-1. Hide unnecessary main menus effortlessly with our plugin
-2. Activate child menu hiding
-3. Explore and customize your preferences with easy-to-use plugin settings
-4. Experience a user-friendly admin panel with our plugin's sleek design
+1. A cleaner WordPress admin menu with hidden entries available from the toolbar.
+2. Use the eye icon beside a main menu item to hide it.
+3. Hide a submenu entry without hiding its parent menu.
+4. Admin Menu Settings lets you switch between shared and personal preferences.
+5. Experimental sorting lets you reorder menu items by dragging their handles.
+6. Experimental sidebar resizing saves the width of the expanded desktop menu.
+7. Experimental separator controls highlight or hide the boundaries between menu groups.
 
 == Changelog ==
 

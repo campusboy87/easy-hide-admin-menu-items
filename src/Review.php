@@ -60,6 +60,10 @@ class Review {
 				align-items: center;
 				gap: 5px;
 			}
+
+			.wp-core-ui .button.ehami_review__link .dashicons {
+				line-height: 1;
+			}
 		</style>
 		<?php
 	}
