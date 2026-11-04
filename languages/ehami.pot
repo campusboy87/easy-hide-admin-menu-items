@@ -2,7 +2,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Easy Hide Admin Menu Items 1.4.0-beta.1\n"
+"Project-Id-Version: Easy Hide Admin Menu Items 1.4.0\n"
 "POT-Creation-Date: 2024-03-07 07:45+0300\n"
 "PO-Revision-Date: 2024-03-07 07:45+0300\n"
 "Last-Translator: \n"

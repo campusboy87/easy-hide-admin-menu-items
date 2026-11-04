@@ -4,7 +4,7 @@ Donate link: #
 Tags: admin menu, hide menu, dashboard, customization menu
 Requires at least: 5.9.0
 Tested up to: 6.9
-Stable tag: 1.3.9
+Stable tag: 1.4.0
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -40,7 +40,7 @@ Key Features:
 
 Enhance your WordPress admin panel experience by effortlessly managing menu items and optimizing the interface according to your specific needs. Experience a clutter-free and user-friendly environment with Easy Hide Admin Menu Items.
 
-### Experimental Features (1.4.0-beta.1)
+### Experimental Features in 1.4.0
 
 These features are available under Appearance → Admin Menu Settings. They are marked as experimental and your feedback is welcome.
 
@@ -93,17 +93,17 @@ You can install this plugin in two ways:
 
 == Changelog ==
 
-= 1.4.0-beta.1 =
-- Added: Experimental sidebar resizing for the desktop menu.
-- Added: Slovak translation and updated Russian translations.
-- Fixed: Shared menu changes require administrator permissions.
-- Fixed: Personal menu settings and visibility remain separate between users.
-- Fixed: Saved sidebar widths respect the folded and mobile menu layouts.
-- Added: Menu Sorting — drag-and-drop reorder of admin menu items (experimental).
-- Added: Menu Separators control — hide or highlight separator lines (experimental).
-- Fixed: PHP 7.0 compatibility (replaced str_contains with strpos).
-- Fixed: Removed console.log from production JavaScript.
-- Fixed: Double wp_die() in Review ajax callbacks.
+= 1.4.0 =
+- Added experimental drag-and-drop sorting for the WordPress admin menu.
+- Added experimental sidebar resizing for the expanded desktop menu.
+- Added experimental controls to hide or highlight menu separators.
+- Added Slovak localization and updated Russian translations.
+- Restricted shared menu changes to users with the manage_options capability.
+- Kept personal menu visibility, order, and width separate between users.
+- Fixed saved sidebar widths overriding the folded and mobile layouts.
+- Aligned the icons in the review notice buttons.
+- Updated the WordPress.org gallery with seven screenshots.
+- Restored PHP 7.0 compatibility and corrected the review AJAX callbacks.
 
 = 1.3.9 =
 - Tested on WordPress 6.9.

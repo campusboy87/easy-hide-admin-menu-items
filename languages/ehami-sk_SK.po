@@ -2,7 +2,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Easy Hide Admin Menu Items 1.4.0-beta.1\n"
+"Project-Id-Version: Easy Hide Admin Menu Items 1.4.0\n"
 "POT-Creation-Date: 2024-03-07 07:45+0300\n"
 "PO-Revision-Date: 2026-11-03 00:57+0100\n"
 "Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
@@ -197,77 +197,83 @@ msgstr "Campusboy, Dan Zakirov, Tkama"
 
 #: src/Assets.php:38
 msgid "Settings saved."
-msgstr ""
+msgstr "Nastavenia boli uložené."
 
 #: src/Assets.php:39
 msgid "Error saving settings."
-msgstr ""
+msgstr "Pri ukladaní nastavení nastala chyba."
 
 #: templates/admin-page-options.php:35
 msgid "No changes (default)"
-msgstr ""
+msgstr "Bez zmien (predvolené)"
 
 #: templates/admin-page-options.php:36
 msgid "Hide all separators"
-msgstr ""
+msgstr "Skryť všetky oddeľovače"
 
 #: templates/admin-page-options.php:37
 msgid "Highlight separators"
-msgstr ""
+msgstr "Zvýrazniť oddeľovače"
 
 #: templates/admin-page-options.php:102 templates/admin-page-options.php:108
 msgid "Menu Sorting"
-msgstr ""
+msgstr "Usporiadanie ponuky"
 
 #: templates/admin-page-options.php:119
 msgid "Enable drag-and-drop menu reordering"
-msgstr ""
+msgstr "Povoliť zmenu poradia položiek ponuky presúvaním"
 
 #: templates/admin-page-options.php:128
 msgid "Drag the handle icon on the right side of menu items to reorder them."
 msgstr ""
+"Ak chcete zmeniť poradie položiek ponuky, presuňte ikonu úchytu na ich "
+"pravej strane."
 
 #: templates/admin-page-options.php:131
 msgid "Note:"
-msgstr ""
+msgstr "Poznámka:"
 
 #: templates/admin-page-options.php:132
 msgid ""
 "your custom order is preserved even when this option is disabled. Use "
 "\"Reset menu order\" to restore the default order."
 msgstr ""
+"vlastné poradie zostane zachované aj po vypnutí tejto možnosti. Ak chcete "
+"obnoviť predvolené poradie, použite možnosť „Obnoviť poradie ponuky“."
 
 #: templates/admin-page-options.php:135 templates/admin-page-options.php:179
 #: templates/admin-page-options.php:224
 msgid "Experimental"
-msgstr ""
+msgstr "Experimentálne"
 
 #: templates/admin-page-options.php:138
 msgid "Reset menu order"
-msgstr ""
+msgstr "Obnoviť poradie ponuky"
 
 #: templates/admin-page-options.php:150 templates/admin-page-options.php:156
 msgid "Sidebar Width"
-msgstr ""
+msgstr "Šírka bočného panela"
 
 #: templates/admin-page-options.php:167
 msgid "Enable sidebar width resize"
-msgstr ""
+msgstr "Povoliť zmenu šírky bočného panela"
 
 #: templates/admin-page-options.php:176
 msgid "Drag the right edge of the sidebar to adjust the menu width."
-msgstr ""
+msgstr "Šírku ponuky upravíte potiahnutím pravého okraja bočného panela."
 
 #: templates/admin-page-options.php:182
 msgid "Reset sidebar width"
-msgstr ""
+msgstr "Obnoviť šírku bočného panela"
 
 #: templates/admin-page-options.php:194 templates/admin-page-options.php:200
 msgid "Menu Separators"
-msgstr ""
+msgstr "Oddeľovače ponuky"
 
 #: templates/admin-page-options.php:221
 msgid ""
 "Control the visibility of separator lines between menu groups in the admin "
 "sidebar."
 msgstr ""
+"Ovládajte zobrazenie oddeľovacích čiar medzi skupinami ponúk v bočnom paneli"
+" administrácie."

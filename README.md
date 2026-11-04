@@ -2,11 +2,11 @@
 
 The plugin provides a user-friendly interface for hiding unused sidebar menu items in the WordPress admin panel.
 
-## Beta 1.4.0-beta.1
+## Version 1.4.0
 
-The `feature/v1.4.0-beta` branch contains the beta with experimental menu sorting, sidebar resizing, and separator controls. Enable these features under Appearance - Admin Menu Settings.
+Version 1.4.0 adds experimental drag-and-drop sorting, desktop sidebar resizing, and separator controls for the WordPress admin menu. Enable these features under Appearance - Admin Menu Settings.
 
-Download the [beta ZIP](https://github.com/campusboy87/easy-hide-admin-menu-items/releases/download/v1.4.0-beta.1/easy-hide-admin-menu-items-1.4.0-beta.1.zip) and install it on a test site. Back up the site before replacing an existing installation. The stable WordPress.org release remains 1.3.9.
+Install the plugin from the [WordPress.org directory](https://wordpress.org/plugins/easy-hide-admin-menu-items/). Version 1.4.0 includes Slovak and Russian translations for the new settings.
 
 In individual mode, each user keeps their own visibility, hidden items, menu order, and sidebar width. Shared menu changes require the `manage_options` capability.
 
