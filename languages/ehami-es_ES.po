@@ -1,0 +1,195 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Easy Hide Admin Menu Items\n"
+"POT-Creation-Date: 2024-03-07 07:45+0300\n"
+"PO-Revision-Date: 2026-11-19 12:00+0100\n"
+"Last-Translator: Pedro Flores\n"
+"Language-Team: Pedro Flores\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: ehami.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: src/Ajax.php:23 src/Ajax.php:40 src/Ajax.php:59 src/Ajax.php:79
+#: src/Ajax.php:98
+msgid "Sorry, you are not allowed to manage options for this site."
+msgstr ""
+"Lo siento, no tienes permiso para gestionar las opciones de este sitio."
+
+#: src/Assets.php:37 templates/switcher.php:26
+msgid "No hidden menu items"
+msgstr "No hay elementos del menú ocultos"
+
+#: src/Assets.php:38
+msgid "Hide menu"
+msgstr "Ocultar menú"
+
+#: src/Review.php:155
+msgid "Hello!"
+msgstr "¡Hola!"
+
+#. translators: %s is a placeholder for the plugin name
+#: src/Review.php:161
+#, php-format
+msgid "We are very pleased that you are using the %s plugin within a few days."
+msgstr "Nos alegra mucho que lleves unos días usando el plugin %s."
+
+#: src/Review.php:166
+msgid "Please rate plugin. It will help us a lot."
+msgstr "Por favor, valora el plugin. Nos ayudará mucho."
+
+#: src/Review.php:172
+msgid "Don't show again!"
+msgstr "¡No volver a mostrar!"
+
+#: src/Review.php:180
+msgid "Remind me later"
+msgstr "Recordármelo más tarde"
+
+#: src/Review.php:190
+msgid "Leave feedback"
+msgstr "Dejar una opinión"
+
+#: src/Settings_Page.php:17 src/Settings_Page.php:18
+msgid "Admin Menu Settings"
+msgstr "Ajustes del menú de administración"
+
+#: src/Settings_Page.php:37
+msgid "Settings"
+msgstr "Ajustes"
+
+#: templates/admin-page-options.php:7
+msgid "User-specific settings"
+msgstr "Ajustes por usuario"
+
+#: templates/admin-page-options.php:11
+msgid "Allow other users to set their own preferences."
+msgstr "Permitir que otros usuarios establezcan sus propias preferencias."
+
+#: templates/admin-page-options.php:12
+msgid ""
+"If checked, each user with access to the admin panel can save hidden menu "
+"settings individually for their own preferences."
+msgstr ""
+"Si está marcado, cada usuario con acceso al panel de administración puede "
+"guardar sus propios ajustes de menús ocultos según sus preferencias."
+
+#: templates/admin-page-options.php:15
+msgid "Child Menu"
+msgstr "Submenús"
+
+#: templates/admin-page-options.php:19
+msgid "Allow hiding child admin menus"
+msgstr "Permitir ocultar los submenús de administración"
+
+#: templates/admin-page-options.php:20
+msgid ""
+"If checked, you can hide the child menu. This may be useful when there are "
+"too many child menus causing distraction."
+msgstr ""
+"Si está marcado, podrás ocultar los submenús. Puede ser útil cuando hay "
+"demasiados submenús que distraen."
+
+#: templates/admin-page-options.php:23
+msgid "Uninstall plugin"
+msgstr "Desinstalar plugin"
+
+#: templates/admin-page-options.php:27
+msgid "Allow the deletion of all plugin data after it is deleted"
+msgstr "Permitir borrar todos los datos del plugin al eliminarlo"
+
+#: templates/admin-page-options.php:28
+msgid ""
+"If checked, all data (option and user metadata) will be deleted when the "
+"plugin is deleted."
+msgstr ""
+"Si está marcado, todos los datos (opciones y metadatos de usuario) se "
+"borrarán al eliminar el plugin."
+
+#: templates/admin-page-options.php:35
+msgid "Easy Hide Admin Menu Items Settings"
+msgstr "Ajustes de Easy Hide Admin Menu Items"
+
+#: templates/admin-page-options.php:44
+msgid "Main Settings"
+msgstr "Ajustes principales"
+
+#: templates/admin-page-options.php:84
+msgid "Save Settings"
+msgstr "Guardar ajustes"
+
+#: templates/admin-page-options.php:94
+msgid "Message From the Author"
+msgstr "Mensaje del autor"
+
+#: templates/admin-page-options.php:98
+msgid ""
+"Thank you for using Easy Hide Admin Menu Items! Your feedback and comments "
+"are highly valuable to us and will assist us in improving the plugin further."
+msgstr ""
+"¡Gracias por usar Easy Hide Admin Menu Items! Tus opiniones y comentarios "
+"son muy valiosos para nosotros y nos ayudarán a seguir mejorando el plugin."
+
+#: templates/admin-page-options.php:108
+msgid ""
+"For support, please contact our helpdesk. If you encounter any issues or "
+"have any questions, feel free to"
+msgstr ""
+"Si necesitas ayuda, ponte en contacto con nuestro soporte. Si tienes algún "
+"problema o alguna pregunta, no dudes en"
+
+#: templates/admin-page-options.php:109
+msgid "contact us here"
+msgstr "contactar con nosotros aquí"
+
+#: templates/admin-page-options.php:121
+msgid ""
+"Please consider leaving a review for our plugin. Your reviews help us "
+"improve and serve you better."
+msgstr ""
+"Te agradeceríamos que dejaras una reseña de nuestro plugin. Tus reseñas nos "
+"ayudan a mejorar y a ofrecerte un mejor servicio."
+
+#: templates/admin-page-options.php:123
+msgid "Leave a review"
+msgstr "Dejar una reseña"
+
+#: templates/switcher.php:10
+msgid "Hide or show selected menu items"
+msgstr "Ocultar o mostrar los elementos del menú seleccionados"
+
+#: templates/switcher.php:22
+msgid "Remove from the list"
+msgstr "Quitar de la lista"
+
+#: templates/switcher.php:36
+msgid "Don't display hide icons"
+msgstr "No mostrar los iconos de ocultar"
+
+#. Plugin Name of the plugin/theme
+msgid "Easy Hide Admin Menu Items"
+msgstr "Easy Hide Admin Menu Items"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/campusboy87/easy-hide-admin-menu-items"
+msgstr "https://github.com/campusboy87/easy-hide-admin-menu-items"
+
+#. Description of the plugin/theme
+msgid "The plugin allows hiding selected admin menu items."
+msgstr ""
+"El plugin permite ocultar los elementos seleccionados del menú de "
+"administración."
+
+#. Author of the plugin/theme
+msgid "Campusboy, Dan Zakirov, Tkama"
+msgstr "Campusboy, Dan Zakirov, Tkama"
